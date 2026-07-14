@@ -5,41 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sheyla Arcos Cruz | English Educator & Consultant</title>
     
-    <!-- Google Fonts: Cormorant Garamond (Serif) & Inter (Sans-Serif) -->
+    <!-- Google Fonts: Syne (Maximalist Sans) & Playfair Display (Chic Serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400;1,700&family=Syne:wght@500;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons CDN for minimalist UI icons -->
+    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Tailwind Custom Configuration -->
+    <!-- Tailwind Custom Configuration for Maximalist Palette -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
+                        wine: {
+                            DEFAULT: '#5A0D1A', // Vino Profundo
+                            light: '#801829',   // Vino Brillante
+                            dark: '#3D050F',    // Terciopelo Negro-Vino
+                            pale: '#E2A4A9',    // Rosa Hueso
+                        },
                         bone: {
-                            DEFAULT: '#FAF7F2',
-                            light: '#FDFBF9',
-                            dark: '#F3ECE0',
-                        },
-                        espresso: {
-                            DEFAULT: '#2B1B12',
-                            light: '#4E3A2F',
-                            dark: '#1D120B',
-                        },
-                        mustard: {
-                            DEFAULT: '#D49A17',
-                            light: '#F6E6C5',
-                            dark: '#A6730F',
+                            DEFAULT: '#FAF5EF', // Hueso Suave
+                            light: '#FFFDFB',   // Hueso Brillante
+                            dark: '#E6DEC9',    // Hueso Oscuro / Pergamino
                         }
                     },
                     fontFamily: {
-                        serif: ['Cormorant Garamond', 'serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        syne: ['Syne', 'sans-serif'],
                         sans: ['Inter', 'sans-serif'],
                     }
                 }
@@ -50,193 +47,234 @@
     <style>
         /* Custom scrollbar matching palette */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 12px;
         }
         ::-webkit-scrollbar-track {
-            background: #FAF7F2;
+            background: #FAF5EF;
+            border-left: 4px solid #5A0D1A;
         }
         ::-webkit-scrollbar-thumb {
-            background: #2B1B12;
-            border-radius: 4px;
+            background: #5A0D1A;
+            border: 2px solid #FAF5EF;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #D49A17;
+            background: #801829;
+        }
+
+        /* Marquee continuous scroll animation */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 25s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
         }
     </style>
 </head>
-<body class="bg-bone text-espresso font-sans selection:bg-mustard-light selection:text-espresso antialiased overflow-x-hidden">
+<body class="bg-bone text-wine font-sans selection:bg-wine selection:text-bone antialiased overflow-x-hidden border-4 md:border-8 border-wine">
 
-    <!-- NAVIGATION BAR -->
-    <header class="fixed top-0 left-0 w-full bg-bone/90 backdrop-blur-md z-50 border-b border-espresso/5 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex flex-col group">
-                <span class="font-serif text-2xl lg:text-3xl font-semibold tracking-wide text-espresso transition-colors group-hover:text-mustard">
-                    Sheyla Arcos Cruz
+    <!-- RUNNING MARQUEE TOP BAR (Maximalist interactive element) -->
+    <div class="bg-wine text-bone overflow-hidden py-3 border-b-4 border-wine font-syne text-xs uppercase tracking-[0.2em] font-bold sticky top-0 z-50">
+        <div class="animate-marquee whitespace-nowrap flex">
+            <span class="mx-4">⚡ SEYLA ARCOS CRUZ • ENGLISH EDUCATOR ⚡</span>
+            <span class="mx-4">SOPORTE Y APRENDIZAJE CONSTANTE •</span>
+            <span class="mx-4">NIVEL PRINCIPIANTE A PROFESIONAL •</span>
+            <span class="mx-4">ESPECIALIDAD EN INGLÉS TURÍSTICO •</span>
+            <span class="mx-4">TEAMS SESSIONS: 8:00 AM - 3:00 PM (CDMX) •</span>
+            <!-- Repeated for seamless loop -->
+            <span class="mx-4">⚡ SEYLA ARCOS CRUZ • ENGLISH EDUCATOR ⚡</span>
+            <span class="mx-4">SOPORTE Y APRENDIZAJE CONSTANTE •</span>
+            <span class="mx-4">NIVEL PRINCIPIANTE A PROFESIONAL •</span>
+            <span class="mx-4">ESPECIALIDAD EN INGLÉS TURÍSTICO •</span>
+            <span class="mx-4">TEAMS SESSIONS: 8:00 AM - 3:00 PM (CDMX) •</span>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="bg-bone border-b-4 border-wine transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
+            <!-- Brand Logo with Brutalist layout -->
+            <a href="#" class="flex flex-col group border-4 border-wine p-3 bg-bone-light hover:bg-wine hover:text-bone-light transition-all duration-300 transform -rotate-1 hover:rotate-0 shadow-[4px_4px_0px_0px_rgba(90,13,26,1)]">
+                <span class="font-syne text-2xl lg:text-3xl font-extrabold tracking-tight">
+                    S.A.C
                 </span>
-                <span class="text-[10px] tracking-[0.25em] uppercase text-espresso/60 -mt-1 font-semibold">
-                    English Educator
+                <span class="text-[9px] tracking-[0.2em] uppercase font-bold text-wine/80 group-hover:text-bone-light/90">
+                    Sheyla Arcos Cruz
                 </span>
             </a>
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-wider uppercase text-espresso/80">
-                <a href="#sobre-mi" class="hover:text-mustard transition-colors duration-200">Sobre Mí</a>
-                <a href="#servicios" class="hover:text-mustard transition-colors duration-200">Servicios</a>
-                <a href="#portafolio" class="hover:text-mustard transition-colors duration-200">Portafolio</a>
-                <a href="#testimonios" class="hover:text-mustard transition-colors duration-200">Testimonios</a>
-                <a href="#contacto" class="hover:text-mustard transition-colors duration-200">Contacto</a>
+            <!-- Desktop Navigation with ultra-bold links -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-syne tracking-wider uppercase font-bold">
+                <a href="#sobre-mi" class="hover:underline decoration-4 decoration-wine-light transition-colors">Sobre Mí</a>
+                <a href="#servicios" class="hover:underline decoration-4 decoration-wine-light transition-colors">Programas</a>
+                <a href="#portafolio" class="hover:underline decoration-4 decoration-wine-light transition-colors">Herramientas</a>
+                <a href="#testimonios" class="hover:underline decoration-4 decoration-wine-light transition-colors">Testimonios</a>
+                <a href="#contacto" class="hover:underline decoration-4 decoration-wine-light transition-colors">Agendar</a>
             </nav>
 
             <!-- Call to Action Button (Desktop) -->
             <div class="hidden md:block">
-                <a href="#contacto" class="px-6 py-3 border border-espresso text-espresso hover:bg-espresso hover:text-bone transition-all duration-300 text-xs tracking-widest uppercase font-semibold rounded-none">
-                    Agendar Sesión
+                <a href="#contacto" class="px-6 py-3 border-4 border-wine bg-wine text-bone font-syne font-bold text-xs tracking-widest uppercase hover:bg-bone hover:text-wine hover:shadow-[4px_4px_0px_0px_rgba(90,13,26,1)] transition-all duration-300 block">
+                    Sesión Teams 8-3 PM
                 </a>
             </div>
 
             <!-- Mobile Menu Toggle Button -->
-            <button id="menu-toggle" class="md:hidden text-espresso focus:outline-none" aria-label="Toggle Menu">
+            <button id="menu-toggle" class="md:hidden text-wine focus:outline-none border-4 border-wine p-2 bg-bone-light shadow-[3px_3px_0px_0px_rgba(90,13,26,1)]" aria-label="Toggle Menu">
                 <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
             </button>
         </div>
 
         <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden fixed top-20 left-0 w-full bg-bone border-b border-espresso/10 px-6 py-8 shadow-lg transition-all duration-300 ease-in-out">
-            <nav class="flex flex-col space-y-6 text-base font-semibold tracking-widest uppercase text-center">
-                <a href="#sobre-mi" class="mobile-link py-2 border-b border-espresso/5 hover:text-mustard">Sobre Mí</a>
-                <a href="#servicios" class="mobile-link py-2 border-b border-espresso/5 hover:text-mustard">Servicios</a>
-                <a href="#portafolio" class="mobile-link py-2 border-b border-espresso/5 hover:text-mustard">Portafolio</a>
-                <a href="#testimonios" class="mobile-link py-2 border-b border-espresso/5 hover:text-mustard">Testimonios</a>
-                <a href="#contacto" class="mobile-link py-2 pb-4 border-b border-espresso/5 hover:text-mustard">Contacto</a>
-                <a href="#contacto" class="mobile-link inline-block mx-auto bg-espresso text-bone px-8 py-3 text-sm tracking-widest uppercase hover:bg-mustard hover:text-espresso transition-all">
-                    Agendar Sesión
+        <div id="mobile-menu" class="hidden md:hidden bg-bone-light border-b-4 border-wine px-6 py-8 shadow-lg transition-all duration-300 ease-in-out">
+            <nav class="flex flex-col space-y-4 text-base font-syne font-bold tracking-wider uppercase text-center">
+                <a href="#sobre-mi" class="mobile-link py-3 border-b-2 border-wine/10 hover:bg-wine hover:text-bone">Sobre Mí</a>
+                <a href="#servicios" class="mobile-link py-3 border-b-2 border-wine/10 hover:bg-wine hover:text-bone">Programas</a>
+                <a href="#portafolio" class="mobile-link py-3 border-b-2 border-wine/10 hover:bg-wine hover:text-bone">Herramientas & Portafolio</a>
+                <a href="#testimonios" class="mobile-link py-3 border-b-2 border-wine/10 hover:bg-wine hover:text-bone">Testimonios</a>
+                <a href="#contacto" class="mobile-link py-3 pb-4 border-b-2 border-wine/10 hover:bg-wine hover:text-bone">Contacto</a>
+                <a href="#contacto" class="mobile-link inline-block mx-auto border-4 border-wine bg-wine text-bone px-8 py-4 text-xs tracking-widest uppercase hover:bg-bone hover:text-wine transition-all shadow-[4px_4px_0px_0px_rgba(90,13,26,1)]">
+                    Agendar por Teams
                 </a>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-screen flex items-center pt-24 lg:pt-32 overflow-hidden bg-bone-light">
-        <!-- Abstract Background Accent Elements -->
-        <div class="absolute right-0 top-1/4 w-[40%] h-[60%] bg-mustard/10 rounded-l-full filter blur-[120px] pointer-events-none"></div>
-        <div class="absolute left-10 bottom-10 w-[200px] h-[200px] border border-mustard/20 rounded-full pointer-events-none"></div>
+    <!-- HERO SECTION (TYPOGRAPHIC & GEOMETRIC WITHOUT IMAGES) -->
+    <section class="relative min-h-screen flex items-center pt-12 pb-24 overflow-hidden bg-bone-light">
+        <!-- Abstract Background Accent Elements (No images, pure brutalist vectors) -->
+        <div class="absolute right-[-10%] top-1/4 w-[50%] h-[50%] bg-wine/5 rounded-full pointer-events-none border-4 border-wine/10 border-dashed"></div>
+        <div class="absolute left-[-5%] bottom-10 w-[300px] h-[300px] bg-wine/5 rotate-45 pointer-events-none border-4 border-wine/10"></div>
 
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
-            <!-- Left Editorial Text Content -->
-            <div class="lg:col-span-7 flex flex-col justify-center space-y-8 z-10">
-                <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase">
-                    <span class="w-8 h-[1px] bg-mustard"></span>
-                    <span>Educación de Inglés Premium</span>
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Massive Editorial Typo -->
+            <div class="lg:col-span-8 flex flex-col justify-center space-y-8 z-10">
+                <div class="inline-flex items-center space-x-3 bg-wine text-bone font-syne font-bold tracking-[0.2em] text-[10px] md:text-xs uppercase px-4 py-2 self-start border-2 border-wine shadow-[3px_3px_0px_0px_rgba(128,24,41,1)]">
+                    <span>NIVEL PRINCIPIANTE A PROFESIONAL</span>
                 </div>
                 
-                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-espresso">
-                    Domina el inglés de forma <span class="italic text-mustard">natural</span> y con propósito profesional.
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] text-wine tracking-tight">
+                    INGLÉS CON <span class="italic text-wine-light font-normal">PROPÓSITO</span> REAL.
                 </h1>
                 
-                <p class="text-espresso/70 text-base md:text-lg max-w-xl font-light leading-relaxed">
-                    Transformo el aprendizaje del inglés en una experiencia orgánica y de alto nivel. Metodologías personalizadas diseñadas para líderes, profesionales y estudiantes decididos a conquistar un entorno global.
+                <p class="text-wine text-lg md:text-xl max-w-2xl font-semibold leading-relaxed border-l-8 border-wine pl-6 py-2">
+                    Aprende desde cero (principiante) o consolida tu perfil corporativo (profesional). Especialidad en inglés turístico y servicio al cliente con metodologías adaptadas a tus objetivos globales.
                 </p>
 
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                    <a href="#contacto" class="px-8 py-4 bg-espresso text-bone hover:bg-mustard hover:text-espresso transition-all duration-300 text-sm tracking-widest uppercase font-semibold text-center group flex items-center justify-center gap-2 shadow-sm">
-                        Comenzar Ahora
-                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 pt-4">
+                    <a href="#contacto" class="px-10 py-5 bg-wine text-bone hover:bg-bone hover:text-wine border-4 border-wine transition-all duration-300 text-sm tracking-widest uppercase font-syne font-black text-center group flex items-center justify-center gap-3 shadow-[6px_6px_0px_0px_rgba(128,24,41,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+                        AGENDAR CLASE (TEAMS)
+                        <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
                     </a>
-                    <a href="#servicios" class="px-8 py-4 border border-espresso/20 text-espresso hover:border-espresso transition-all duration-300 text-sm tracking-widest uppercase font-semibold text-center">
-                        Explorar Programas
+                    <a href="#servicios" class="px-10 py-5 border-4 border-wine text-wine hover:bg-wine hover:text-bone font-syne font-bold text-sm tracking-widest uppercase text-center transition-all duration-300 shadow-[6px_6px_0px_0px_rgba(90,13,26,1)] hover:shadow-none">
+                        VER ESPECIALIDADES
                     </a>
                 </div>
 
-                <!-- Small Key Metric / Trust Badges -->
-                <div class="grid grid-cols-3 gap-6 pt-10 border-t border-espresso/10">
-                    <div>
-                        <p class="font-serif text-3xl font-semibold text-espresso">10+</p>
-                        <p class="text-xs uppercase tracking-wider text-espresso/60 mt-1">Años de Experiencia</p>
+                <!-- Small Key Metric / Trust Badges (Brutalist Style) -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-8 border-t-4 border-wine">
+                    <div class="bg-bone border-4 border-wine p-4 shadow-[4px_4px_0px_0px_rgba(90,13,26,1)]">
+                        <p class="font-syne text-3xl font-extrabold text-wine">Teams</p>
+                        <p class="text-[10px] uppercase tracking-widest font-bold text-wine-light mt-1">Sesiones 8:00 AM - 3:00 PM</p>
                     </div>
-                    <div>
-                        <p class="font-serif text-3xl font-semibold text-espresso">100%</p>
-                        <p class="text-xs uppercase tracking-wider text-espresso/60 mt-1">Metodología Activa</p>
+                    <div class="bg-bone border-4 border-wine p-4 shadow-[4px_4px_0px_0px_rgba(90,13,26,1)]">
+                        <p class="font-syne text-3xl font-extrabold text-wine">Moodle</p>
+                        <p class="text-[10px] uppercase tracking-widest font-bold text-wine-light mt-1">Aulas Virtuales de Apoyo</p>
                     </div>
-                    <div>
-                        <p class="font-serif text-3xl font-semibold text-espresso">500+</p>
-                        <p class="text-xs uppercase tracking-wider text-espresso/60 mt-1">Alumnos Globales</p>
+                    <div class="bg-bone border-4 border-wine p-4 shadow-[4px_4px_0px_0px_rgba(90,13,26,1)] col-span-2 md:col-span-1">
+                        <p class="font-syne text-3xl font-extrabold text-wine">Turismo</p>
+                        <p class="text-[10px] uppercase tracking-widest font-bold text-wine-light mt-1">Enfoque Turístico Global</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Visual Component (Minimalist Portrait & Decorative Box) -->
-            <div class="lg:col-span-5 relative flex justify-center lg:justify-end z-10 mt-8 lg:mt-0">
-                <div class="relative w-full max-w-[380px] aspect-[4/5] bg-bone-dark p-3 shadow-xl border border-espresso/5">
-                    <!-- Absolute Accent Box -->
-                    <div class="absolute -top-6 -left-6 w-12 h-12 border-t-2 border-l-2 border-mustard"></div>
-                    <div class="absolute -bottom-6 -right-6 w-12 h-12 border-b-2 border-r-2 border-mustard"></div>
+            <!-- Right Typography Block (Replaces portrait photo) -->
+            <div class="lg:col-span-4 relative flex justify-center lg:justify-end z-10 mt-8 lg:mt-0">
+                <div class="relative w-full max-w-[340px] aspect-square bg-wine text-bone p-8 shadow-[12px_12px_0px_0px_rgba(128,24,41,1)] border-4 border-wine flex flex-col justify-between transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <div class="flex justify-between items-start">
+                        <span class="font-syne text-xs uppercase tracking-widest bg-bone text-wine px-2 py-1 font-extrabold">SHELA ARCOS</span>
+                        <i data-lucide="languages" class="w-8 h-8 text-wine-pale"></i>
+                    </div>
                     
-                    <!-- Main Portrait Image Placeholder with exact styling matching palette -->
-                    <div class="w-full h-full bg-espresso/5 overflow-hidden relative group">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" 
-                             alt="Sheyla Arcos Cruz" 
-                             onerror="this.src='https://placehold.co/600x800/2B1B12/FAF7F2?text=Sheyla+Arcos+Cruz'"
-                             class="w-full h-full object-cover grayscale contrast-[1.15] brightness-[0.95] hover:grayscale-0 transition-all duration-700 ease-in-out">
-                        
-                        <!-- Overlay accent tint -->
-                        <div class="absolute inset-0 bg-mustard/10 mix-blend-multiply opacity-40 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <div>
+                        <p class="font-serif text-5xl font-black italic text-wine-pale mb-2">"Speak"</p>
+                        <p class="font-syne text-sm font-bold uppercase tracking-wider text-bone-light">
+                            El inglés práctico abre las puertas de la hospitalidad y los negocios globales.
+                        </p>
+                    </div>
+
+                    <div class="border-t-2 border-bone-light/20 pt-4 flex justify-between items-center text-[10px] font-mono tracking-widest uppercase">
+                        <span>HORA MÉXICO</span>
+                        <span>08:00 - 15:00</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT ME (SOBRE MÍ) -->
-    <section id="sobre-mi" class="py-24 lg:py-32 bg-bone relative">
+    <!-- SOBRE MÍ (ABOUT ME) -->
+    <section id="sobre-mi" class="py-24 bg-bone relative border-t-4 border-wine">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 
-                <!-- Left Details Graphic / Small Image -->
+                <!-- Left Details: Large Typographical Brutalist Grid (Replaces about image) -->
                 <div class="lg:col-span-5 order-2 lg:order-1 relative">
-                    <div class="relative w-full aspect-square max-w-[400px] mx-auto bg-mustard-light p-4">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600" 
-                             alt="Educación interactiva"
-                             onerror="this.src='https://placehold.co/600x600/FAF7F2/2B1B12?text=Education'"
-                             class="w-full h-full object-cover grayscale brightness-95">
-                        
-                        <!-- Mini Floater Card -->
-                        <div class="absolute -bottom-8 -left-8 bg-espresso text-bone p-6 shadow-2xl max-w-[200px]">
-                            <p class="font-serif text-3xl text-mustard italic font-light">"Bridge"</p>
-                            <p class="text-xs text-bone/70 uppercase tracking-widest mt-2 leading-relaxed">
-                                El idioma no es una barrera, es un puente hacia el mundo.
-                            </p>
+                    <div class="bg-wine-light text-bone p-8 border-4 border-wine shadow-[8px_8px_0px_0px_rgba(90,13,26,1)] transform -rotate-1 space-y-6">
+                        <div class="flex items-center space-x-3 text-bone">
+                            <i data-lucide="target" class="w-8 h-8"></i>
+                            <h3 class="font-syne font-black text-xl uppercase tracking-widest">MI OBJETIVO</h3>
+                        </div>
+                        <p class="font-serif text-2xl italic font-semibold text-bone-light leading-relaxed">
+                            "Seguir aprendiendo más cosas nuevas y compartirlas con los demás para apoyarlos a alcanzar sus metas de comunicación."
+                        </p>
+                        <div class="border-t border-bone/30 pt-4 space-y-3">
+                            <div class="flex justify-between text-xs font-mono">
+                                <span>HERRAMIENTA CLAVE:</span>
+                                <span>PLATAFORMA MOODLE</span>
+                            </div>
+                            <div class="flex justify-between text-xs font-mono">
+                                <span>COMPLEMENTO:</span>
+                                <span>SERVICIO AL CLIENTE</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Editorial Text -->
+                <!-- Right Editorial Text (Updated with specific user information) -->
                 <div class="lg:col-span-7 order-1 lg:order-2 space-y-8">
-                    <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase">
-                        <span class="w-8 h-[1px] bg-mustard"></span>
-                        <span>Sobre Mí</span>
+                    <div class="inline-flex items-center space-x-3 bg-wine text-bone font-syne font-bold tracking-[0.25em] text-xs uppercase px-4 py-2 border-2 border-wine shadow-[3px_3px_0px_0px_rgba(128,24,41,1)]">
+                        <span>SOBRE MÍ</span>
                     </div>
 
-                    <h2 class="font-serif text-4xl md:text-5xl font-light leading-tight text-espresso">
-                        Soy Sheyla Arcos Cruz, facilitadora de tu crecimiento global a través del idioma.
+                    <h2 class="font-serif text-4xl md:text-5xl font-black leading-none text-wine">
+                        ¡Hola! Soy Sheyla Arcos Cruz. Disfruto apoyar a las personas a crecer a través de la educación bilingüe.
                     </h2>
 
-                    <div class="space-y-6 text-espresso/80 text-base font-light leading-relaxed">
+                    <div class="space-y-6 text-wine font-medium text-base leading-relaxed">
                         <p>
-                            A lo largo de mi trayectoria como educadora de inglés, he entendido que memorizar listas de vocabulario o reglas gramaticales abstractas no genera verdadera confianza. Mi enfoque se centra en el **diseño de experiencias de aprendizaje orgánico**, contextualizadas para la vida profesional real.
+                            Soy una persona convencida de que el aprendizaje nunca se detiene. Me apasiona **apoyar a los demás** a derribar barreras lingüísticas, ayudándoles a adquirir confianza en el idioma inglés, ya sea que inicien desde cero (**principiantes**) o busquen refinarse para un entorno laboral internacional (**profesionales**).
                         </p>
-                        <p class="border-l-4 border-mustard pl-6 italic text-espresso/90 font-serif text-lg my-6">
-                            "Mi meta no es solo que apruebes un examen, sino que logres expresar tus ideas con la misma fuerza y matices con los que lo haces en tu idioma nativo."
-                        </p>
+                        
                         <p>
-                            Especializada en consultorías corporativas, coaching de comunicación de negocios y preparación integral de perfiles de alta dirección para conferencias y negociaciones internacionales. Utilizo dinámicas activas con una curaduría meticulosa de recursos didácticos modernos.
+                            A lo largo de mi trayectoria académica y profesional, he integrado herramientas digitales de vanguardia como **Moodle** para crear aulas de estudio activas y organizadas. Además, cuento con formación externa clave como **Servicio al Cliente**, lo cual me permite ofrecer un trato empático, estructurado y altamente profesional en mis tutorías.
+                        </p>
+
+                        <p>
+                            Me he introducido a fondo en el área del **Inglés Turístico** y poseo sólidos conocimientos en temas de **Turismo y Hospitalidad**. Esto me permite diseñar programas orientados a guías, personal hotelero y viajeros que necesitan comunicarse con precisión técnica y naturalidad en el sector.
                         </p>
                     </div>
 
                     <div class="pt-4 flex flex-wrap gap-3">
-                        <span class="px-4 py-2 bg-bone-dark border border-espresso/10 text-espresso text-xs tracking-wider uppercase font-medium">Bilingüismo Efectivo</span>
-                        <span class="px-4 py-2 bg-bone-dark border border-espresso/10 text-espresso text-xs tracking-wider uppercase font-medium">Mentoring de Negocios</span>
-                        <span class="px-4 py-2 bg-bone-dark border border-espresso/10 text-espresso text-xs tracking-wider uppercase font-medium">Educación Personalizada</span>
+                        <span class="px-4 py-2 bg-wine text-bone border-2 border-wine text-xs tracking-wider uppercase font-syne font-bold shadow-[2px_2px_0px_0px_rgba(128,24,41,1)]">Educación Online</span>
+                        <span class="px-4 py-2 bg-wine text-bone border-2 border-wine text-xs tracking-wider uppercase font-syne font-bold shadow-[2px_2px_0px_0px_rgba(128,24,41,1)]">Gestión con Moodle</span>
+                        <span class="px-4 py-2 bg-wine text-bone border-2 border-wine text-xs tracking-wider uppercase font-syne font-bold shadow-[2px_2px_0px_0px_rgba(128,24,41,1)]">Enfoque Turístico</span>
+                        <span class="px-4 py-2 bg-wine text-bone border-2 border-wine text-xs tracking-wider uppercase font-syne font-bold shadow-[2px_2px_0px_0px_rgba(128,24,41,1)]">Servicio al Cliente</span>
                     </div>
                 </div>
 
@@ -244,180 +282,186 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION (3 CARDS) -->
-    <section id="servicios" class="py-24 lg:py-32 bg-bone-light relative border-t border-espresso/5">
+    <!-- SERVICES SECTION (3 MAXIMALIST CARDS) -->
+    <section id="servicios" class="py-24 bg-bone-light relative border-t-4 border-wine">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
             <!-- Section Header -->
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 space-y-6 md:space-y-0">
                 <div class="space-y-4 max-w-2xl">
-                    <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase">
-                        <span class="w-8 h-[1px] bg-mustard"></span>
-                        <span>Programas de Aprendizaje</span>
+                    <div class="inline-flex items-center space-x-3 bg-wine text-bone font-syne font-bold tracking-[0.25em] text-xs uppercase px-4 py-2 border-2 border-wine shadow-[3px_3px_0px_0px_rgba(128,24,41,1)]">
+                        <span>SERVICIOS Y CAPACITACIONES</span>
                     </div>
-                    <h2 class="font-serif text-4xl md:text-5xl font-light text-espresso">
-                        Consultoría y Programas de Idioma Exclusivos
+                    <h2 class="font-serif text-4xl md:text-5xl font-black text-wine leading-tight">
+                        Programas Formativos a tu Medida
                     </h2>
                 </div>
-                <p class="text-espresso/60 text-sm max-w-xs uppercase tracking-widest leading-relaxed">
-                    Soluciones de aprendizaje a medida de tus objetivos profesionales.
+                <p class="text-wine/80 font-bold text-xs max-w-xs uppercase tracking-widest leading-relaxed border-t-4 border-wine pt-4">
+                    Diseñado para el desarrollo de competencias prácticas y soporte continuo.
                 </p>
             </div>
 
-            <!-- The 3 Services Cards Grid -->
+            <!-- The 3 Services Cards Grid (Strictly responsive brutalist blocks) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Card 1: Corporate & Business English -->
-                <div class="bg-bone border border-espresso/10 p-10 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-mustard group">
-                    <div class="space-y-8">
-                        <div class="w-14 h-14 bg-mustard-light flex items-center justify-center text-mustard transition-colors group-hover:bg-mustard group-hover:text-espresso">
-                            <i data-lucide="briefcase" class="w-6 h-6"></i>
+                <!-- Card 1: Inglés Turístico & Servicio al Cliente -->
+                <div class="bg-bone border-4 border-wine p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(90,13,26,1)] group">
+                    <div class="space-y-6">
+                        <div class="w-16 h-16 bg-wine text-bone border-4 border-wine flex items-center justify-center font-bold shadow-[4px_4px_0px_0px_rgba(128,24,41,1)]">
+                            <i data-lucide="compass" class="w-8 h-8"></i>
                         </div>
                         <div class="space-y-3">
-                            <h3 class="font-serif text-2xl font-semibold text-espresso">Inglés de Negocios & Liderazgo</h3>
-                            <p class="text-espresso/70 text-sm font-light leading-relaxed">
-                                Diseñado para ejecutivos y líderes que necesitan liderar juntas, realizar pitches de venta eficaces y redactar reportes corporativos de alto impacto.
+                            <span class="text-[10px] font-syne font-extrabold uppercase tracking-widest bg-wine/10 text-wine px-2 py-1 self-start">Especialidad</span>
+                            <h3 class="font-syne text-2xl font-black text-wine">Inglés Turístico & Hospitalidad</h3>
+                            <p class="text-wine text-sm font-semibold leading-relaxed">
+                                Vocabulario, diálogos de servicio al cliente y resolución de problemas para profesionales del turismo, hotelería y guías de viaje que buscan interactuar con soltura.
                             </p>
                         </div>
                     </div>
                     
-                    <div class="mt-12 pt-6 border-t border-espresso/5 flex items-center justify-between">
-                        <span class="text-xs uppercase tracking-widest text-espresso/60 group-hover:text-mustard font-semibold transition-colors">Ver Detalles</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-espresso/40 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    <div class="mt-8 pt-6 border-t-2 border-wine/20 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest font-syne font-extrabold text-wine group-hover:underline">Me Interesa</span>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wine transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
                     </div>
                 </div>
 
-                <!-- Card 2: International Certification -->
-                <div class="bg-bone border border-espresso/10 p-10 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-mustard group">
-                    <div class="space-y-8">
-                        <div class="w-14 h-14 bg-mustard-light flex items-center justify-center text-mustard transition-colors group-hover:bg-mustard group-hover:text-espresso">
-                            <i data-lucide="award" class="w-6 h-6"></i>
+                <!-- Card 2: Principiante (Desde Cero) -->
+                <div class="bg-bone border-4 border-wine p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(90,13,26,1)] group">
+                    <div class="space-y-6">
+                        <div class="w-16 h-16 bg-wine text-bone border-4 border-wine flex items-center justify-center font-bold shadow-[4px_4px_0px_0px_rgba(128,24,41,1)]">
+                            <i data-lucide="graduation-cap" class="w-8 h-8"></i>
                         </div>
                         <div class="space-y-3">
-                            <h3 class="font-serif text-2xl font-semibold text-espresso">Preparación TOEFL & IELTS</h3>
-                            <p class="text-espresso/70 text-sm font-light leading-relaxed">
-                                Estrategias avanzadas de examen, simulacros cronometrados y retroalimentación personalizada de oratoria para garantizar el puntaje requerido para posgrados y visados.
+                            <span class="text-[10px] font-syne font-extrabold uppercase tracking-widest bg-wine/10 text-wine px-2 py-1 self-start">Nivel Inicial</span>
+                            <h3 class="font-syne text-2xl font-black text-wine">Inglés desde Cero (Principiante)</h3>
+                            <p class="text-wine text-sm font-semibold leading-relaxed">
+                                Soporte paciente y dinámico enfocado en generar confianza. Construcción de vocabulario, bases gramaticales sencillas y sesiones diseñadas paso a paso.
                             </p>
                         </div>
                     </div>
                     
-                    <div class="mt-12 pt-6 border-t border-espresso/5 flex items-center justify-between">
-                        <span class="text-xs uppercase tracking-widest text-espresso/60 group-hover:text-mustard font-semibold transition-colors">Ver Detalles</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-espresso/40 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    <div class="mt-8 pt-6 border-t-2 border-wine/20 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest font-syne font-extrabold text-wine group-hover:underline">Me Interesa</span>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wine transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
                     </div>
                 </div>
 
-                <!-- Card 3: 1-to-1 Premium Immersion -->
-                <div class="bg-bone border border-espresso/10 p-10 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-mustard group">
-                    <div class="space-y-8">
-                        <div class="w-14 h-14 bg-mustard-light flex items-center justify-center text-mustard transition-colors group-hover:bg-mustard group-hover:text-espresso">
-                            <i data-lucide="users" class="w-6 h-6"></i>
+                <!-- Card 3: Profesional -->
+                <div class="bg-bone border-4 border-wine p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(90,13,26,1)] group">
+                    <div class="space-y-6">
+                        <div class="w-16 h-16 bg-wine text-bone border-4 border-wine flex items-center justify-center font-bold shadow-[4px_4px_0px_0px_rgba(128,24,41,1)]">
+                            <i data-lucide="briefcase" class="w-8 h-8"></i>
                         </div>
                         <div class="space-y-3">
-                            <h3 class="font-serif text-2xl font-semibold text-espresso">Mentoría 1-to-1 de Fluidez</h3>
-                            <p class="text-espresso/70 text-sm font-light leading-relaxed">
-                                Inmersión total uno a uno con enfoque conversacional. Corregimos acento, mejoramos comprensión y destrabamos el miedo escénico mediante role-plays personalizados.
+                            <span class="text-[10px] font-syne font-extrabold uppercase tracking-widest bg-wine/10 text-wine px-2 py-1 self-start">Nivel Avanzado</span>
+                            <h3 class="font-syne text-2xl font-black text-wine">Inglés Profesional & Negocios</h3>
+                            <p class="text-wine text-sm font-semibold leading-relaxed">
+                                Perfecciona tu comunicación en juntas virtuales, presentaciones y correspondencia oficial. Integración de servicio al cliente con estándares de alta calidad.
                             </p>
                         </div>
                     </div>
                     
-                    <div class="mt-12 pt-6 border-t border-espresso/5 flex items-center justify-between">
-                        <span class="text-xs uppercase tracking-widest text-espresso/60 group-hover:text-mustard font-semibold transition-colors">Ver Detalles</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-espresso/40 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    <div class="mt-8 pt-6 border-t-2 border-wine/20 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest font-syne font-extrabold text-wine group-hover:underline">Me Interesa</span>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wine transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Focus Statement Below Cards -->
-            <div class="mt-16 bg-espresso text-bone p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
-                <div class="space-y-2">
-                    <h4 class="font-serif text-2xl lg:text-3xl font-light">¿Necesitas una currícula completamente personalizada para tu empresa?</h4>
-                    <p class="text-bone/75 text-sm font-light max-w-xl">Desarrollamos capacitaciones in-house alineadas a la jerga técnica de tu nicho comercial.</p>
+            <!-- Focus Statement Below Cards (Teams Session Announcement) -->
+            <div class="mt-16 bg-wine text-bone p-8 lg:p-12 border-4 border-wine flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[8px_8px_0px_0px_rgba(128,24,41,1)]">
+                <div class="space-y-3">
+                    <h4 class="font-serif text-3xl font-black italic text-wine-pale">Horarios Flexibles de Lunes a Viernes</h4>
+                    <p class="text-bone-light/90 text-sm font-semibold max-w-xl">
+                        Nuestras sesiones individuales y grupales se imparten vía <span class="underline">Microsoft Teams</span> en un horario continuo de 8:00 AM a 3:00 PM (Hora Centro de México).
+                    </p>
                 </div>
-                <a href="#contacto" class="px-8 py-4 bg-mustard text-espresso hover:bg-bone hover:text-espresso transition-all duration-300 text-xs tracking-widest uppercase font-semibold whitespace-nowrap">
-                    Cotizar Proyecto
+                <a href="#contacto" class="px-8 py-4 bg-bone text-wine border-4 border-bone hover:bg-wine hover:text-bone hover:border-bone transition-all duration-300 font-syne font-black text-xs tracking-widest uppercase whitespace-nowrap">
+                    RESERVAR HORARIO
                 </a>
             </div>
 
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
-    <section id="portafolio" class="py-24 lg:py-32 bg-bone">
+    <!-- PORTFOLIO SECTION (INTERACTIVE / BRUTALIST GRID) -->
+    <section id="portafolio" class="py-24 bg-bone relative border-t-4 border-wine">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             
             <!-- Section Header -->
             <div class="space-y-4 mb-16">
-                <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase">
-                    <span class="w-8 h-[1px] bg-mustard"></span>
-                    <span>Portafolio e Impacto</span>
+                <div class="inline-flex items-center space-x-3 bg-wine text-bone font-syne font-bold tracking-[0.25em] text-xs uppercase px-4 py-2 border-2 border-wine shadow-[3px_3px_0px_0px_rgba(128,24,41,1)]">
+                    <span>RECURSOS Y HERRAMIENTAS</span>
                 </div>
-                <h2 class="font-serif text-4xl md:text-5xl font-light text-espresso">
-                    Casos de Éxito & Recursos Curados
+                <h2 class="font-serif text-4xl md:text-5xl font-black text-wine">
+                    Mi Ecosistema de Enseñanza
                 </h2>
-                <p class="text-espresso/70 text-sm max-w-xl font-light leading-relaxed">
-                    Un vistazo a las guías de estudio interactivas, conferencias facilitadas y proyectos corporativos de éxito coordinados por Sheyla.
+                <p class="text-wine font-semibold text-base max-w-2xl leading-relaxed">
+                    Un portafolio diseñado para mostrar cómo utilizo Moodle y otros recursos externos para asegurar que tu aprendizaje de inglés (principiante o profesional) sea impecable.
                 </p>
             </div>
 
-            <!-- Portfolio Filters (Visual Only / Configured for UX) -->
-            <div class="flex flex-wrap gap-4 mb-10 border-b border-espresso/10 pb-6 text-xs uppercase tracking-wider font-semibold">
-                <button class="portfolio-filter text-mustard border-b-2 border-mustard pb-2 px-1">Todos</button>
-                <button class="portfolio-filter text-espresso/60 hover:text-espresso transition-colors pb-2 px-1">Guías de Estudio</button>
-                <button class="portfolio-filter text-espresso/60 hover:text-espresso transition-colors pb-2 px-1">Éxito Corporativo</button>
-                <button class="portfolio-filter text-espresso/60 hover:text-espresso transition-colors pb-2 px-1">Workshops</button>
+            <!-- Portfolio Filters (Fully functional visual styling toggles) -->
+            <div class="flex flex-wrap gap-4 mb-10 border-b-4 border-wine pb-6 text-xs font-syne uppercase tracking-wider font-extrabold">
+                <button class="portfolio-filter bg-wine text-bone border-2 border-wine px-4 py-2 shadow-[2px_2px_0px_0px_rgba(128,24,41,1)]">Todos los recursos</button>
+                <button class="portfolio-filter border-2 border-wine px-4 py-2 hover:bg-wine hover:text-bone transition-all">Moodle & Aulas Virtuales</button>
+                <button class="portfolio-filter border-2 border-wine px-4 py-2 hover:bg-wine hover:text-bone transition-all">Inglés Turístico</button>
+                <button class="portfolio-filter border-2 border-wine px-4 py-2 hover:bg-wine hover:text-bone transition-all">Atención & Servicio</button>
             </div>
 
-            <!-- Portfolio Grid -->
+            <!-- Portfolio Grid with typographic content cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Project 1 -->
-                <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden bg-espresso/5 aspect-[16/10] mb-4">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600" 
-                             alt="Business Toolkit"
-                             onerror="this.src='https://placehold.co/600x400/2B1B12/FAF7F2?text=Business+English+Toolkit'"
-                             class="w-full h-full object-cover grayscale brightness-95 group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="px-5 py-3 bg-bone text-espresso text-xs uppercase tracking-widest font-semibold">Ver Proyecto</span>
+                <!-- Project 1 (Moodle Environment Showcase) -->
+                <div class="group border-4 border-wine bg-bone-light p-6 transition-all duration-300 hover:shadow-[6px_6px_0px_0px_rgba(90,13,26,1)]">
+                    <div class="aspect-[16/10] bg-wine text-bone p-6 mb-6 flex flex-col justify-between border-2 border-wine">
+                        <div class="flex justify-between items-center">
+                            <i data-lucide="monitor-play" class="w-8 h-8 text-wine-pale"></i>
+                            <span class="font-mono text-xs text-wine-pale uppercase">Moodle Lms</span>
                         </div>
+                        <h4 class="font-syne text-2xl font-black uppercase leading-tight text-bone-light">
+                            Aula Virtual Activa
+                        </h4>
+                        <span class="text-[10px] font-mono tracking-widest text-wine-pale">VERSION 4.2 CONFIGURED</span>
                     </div>
-                    <p class="text-xs uppercase tracking-widest text-mustard font-semibold mb-1">Guías de Estudio</p>
-                    <h4 class="font-serif text-xl font-semibold text-espresso group-hover:text-mustard transition-colors">Business English Interactive Toolkit</h4>
-                    <p class="text-espresso/70 text-xs mt-2 font-light line-clamp-2">Una biblioteca curada de plantillas y ejercicios de conversación utilizados por más de 120 ejecutivos para acelerar su oratoria en juntas virtuales.</p>
+                    <p class="text-[10px] uppercase tracking-widest text-wine-light font-extrabold mb-1">Moodle & Aulas Virtuales</p>
+                    <h4 class="font-serif text-xl font-bold text-wine group-hover:underline">Entorno de Aprendizaje Organizado</h4>
+                    <p class="text-wine text-xs mt-2 font-semibold leading-relaxed">Demostración de mi plataforma activa de Moodle, diseñada con foros interactivos, tareas paso a paso y seguimiento estructurado de nivel principiante.</p>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden bg-espresso/5 aspect-[16/10] mb-4">
-                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" 
-                             alt="Tech Team English Program"
-                             onerror="this.src='https://placehold.co/600x400/2B1B12/FAF7F2?text=Corporate+Consulting'"
-                             class="w-full h-full object-cover grayscale brightness-95 group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="px-5 py-3 bg-bone text-espresso text-xs uppercase tracking-widest font-semibold">Ver Proyecto</span>
+                <!-- Project 2 (Tourism English Handbook Showcase) -->
+                <div class="group border-4 border-wine bg-bone-light p-6 transition-all duration-300 hover:shadow-[6px_6px_0px_0px_rgba(90,13,26,1)]">
+                    <div class="aspect-[16/10] bg-wine-light text-bone p-6 mb-6 flex flex-col justify-between border-2 border-wine">
+                        <div class="flex justify-between items-center">
+                            <i data-lucide="book-open" class="w-8 h-8 text-bone-light"></i>
+                            <span class="font-mono text-xs text-bone-light/80 uppercase">Handbook</span>
                         </div>
+                        <h4 class="font-syne text-2xl font-black uppercase leading-tight text-bone">
+                            Guía Turística de Inglés
+                        </h4>
+                        <span class="text-[10px] font-mono tracking-widest text-bone-light/80">PDF INTERACTIVO</span>
                     </div>
-                    <p class="text-xs uppercase tracking-widest text-mustard font-semibold mb-1">Éxito Corporativo</p>
-                    <h4 class="font-serif text-xl font-semibold text-espresso group-hover:text-mustard transition-colors">Inmersión para Equipos de Tecnología</h4>
-                    <p class="text-espresso/70 text-xs mt-2 font-light line-clamp-2">Programa intensivo de 6 meses para elevar el nivel de comunicación de un equipo de software del nivel B1 al B2/C1, facilitando reuniones con clientes de EE.UU.</p>
+                    <p class="text-[10px] uppercase tracking-widest text-wine-light font-extrabold mb-1">Inglés Turístico</p>
+                    <h4 class="font-serif text-xl font-bold text-wine group-hover:underline">Manual Práctico de Hospitalidad</h4>
+                    <p class="text-wine text-xs mt-2 font-semibold leading-relaxed">Ejercicios de juego de roles (roleplay) enfocados en situaciones cotidianas de aeropuertos, hoteles y servicios de visitas guiadas.</p>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="group cursor-pointer">
-                    <div class="relative overflow-hidden bg-espresso/5 aspect-[16/10] mb-4">
-                        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600" 
-                             alt="Public Speaking Class"
-                             onerror="this.src='https://placehold.co/600x400/2B1B12/FAF7F2?text=Public+Speaking'"
-                             class="w-full h-full object-cover grayscale brightness-95 group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="px-5 py-3 bg-bone text-espresso text-xs uppercase tracking-widest font-semibold">Ver Proyecto</span>
+                <!-- Project 3 (Customer Service Module Showcase) -->
+                <div class="group border-4 border-wine bg-bone-light p-6 transition-all duration-300 hover:shadow-[6px_6px_0px_0px_rgba(90,13,26,1)]">
+                    <div class="aspect-[16/10] bg-wine text-bone p-6 mb-6 flex flex-col justify-between border-2 border-wine">
+                        <div class="flex justify-between items-center">
+                            <i data-lucide="user-check" class="w-8 h-8 text-wine-pale"></i>
+                            <span class="font-mono text-xs text-wine-pale uppercase">Toolkit</span>
                         </div>
+                        <h4 class="font-syne text-2xl font-black uppercase leading-tight text-bone-light">
+                            Customer Service Prep
+                        </h4>
+                        <span class="text-[10px] font-mono tracking-widest text-wine-pale">WORKBOOK COMPLETO</span>
                     </div>
-                    <p class="text-xs uppercase tracking-widest text-mustard font-semibold mb-1">Workshops</p>
-                    <h4 class="font-serif text-xl font-semibold text-espresso group-hover:text-mustard transition-colors">Workshop de Oratoria "Speak without Fear"</h4>
-                    <p class="text-espresso/70 text-xs mt-2 font-light line-clamp-2">Taller dinámico intensivo para superar la ansiedad comunicativa y consolidar técnicas de persuasión, proyección de voz y lenguaje corporal en inglés.</p>
+                    <p class="text-[10px] uppercase tracking-widest text-wine-light font-extrabold mb-1">Atención & Servicio</p>
+                    <h4 class="font-serif text-xl font-bold text-wine group-hover:underline">Estrategias de Atención en Inglés</h4>
+                    <p class="text-wine text-xs mt-2 font-semibold leading-relaxed">Plantillas y estructuras de conversación desarrolladas a partir de mis cursos externos de atención al cliente, listos para aplicar en el sector servicios.</p>
                 </div>
 
             </div>
@@ -425,69 +469,47 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section id="testimonios" class="py-24 lg:py-32 bg-bone-dark relative">
+    <!-- TESTIMONIALS SECTION (BRUTALIST COMIC BUBBLES) -->
+    <section id="testimonios" class="py-24 bg-wine-dark text-bone relative border-t-4 border-wine">
         <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
             
-            <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase mb-10">
-                <span class="w-8 h-[1px] bg-mustard"></span>
-                <span>Testimonios Reales</span>
+            <div class="inline-flex items-center space-x-3 bg-bone text-wine font-syne font-bold tracking-[0.25em] text-xs uppercase px-4 py-2 border-2 border-wine shadow-[3px_3px_0px_0px_rgba(250,245,239,1)] mb-12">
+                <span>TESTIMONIOS DE ESTUDIANTES</span>
             </div>
 
-            <!-- Testimonial Slider Wrapper (Vanilla JS Controlled) -->
-            <div class="relative min-h-[300px] flex items-center justify-center">
+            <!-- Testimonial Slider Wrapper -->
+            <div class="relative min-h-[250px] flex items-center justify-center">
                 
                 <!-- Testimonial Item 1 -->
-                <div class="testimonial-slide opacity-100 block transition-all duration-500 space-y-8">
-                    <div class="flex justify-center text-mustard space-x-1">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <blockquote class="font-serif text-2xl md:text-3xl font-light italic leading-relaxed text-espresso/90 max-w-4xl mx-auto">
-                        "La metodología de Sheyla cambió por completo mi forma de hablar. Pasé de sentirme aterrado en las videollamadas con inversores a liderar juntas enteras con absoluta fluidez. Sus sesiones corporativas son de otro nivel."
+                <div class="testimonial-slide opacity-100 block transition-all duration-500 space-y-6">
+                    <blockquote class="font-serif text-2xl md:text-4xl font-normal italic leading-relaxed text-bone-light max-w-4xl mx-auto">
+                        "Sheyla tiene una paciencia increíble para enseñar desde cero. Sus clases vía Teams son muy dinámicas y el material que comparte en Moodle me ayuda a practicar toda la semana."
                     </blockquote>
-                    <div>
-                        <cite class="not-italic font-semibold text-base text-espresso block">Ing. Alejandro Medina</cite>
-                        <span class="text-xs uppercase tracking-wider text-espresso/60 mt-1 block">VP de Tecnología en FinTech Solutions</span>
+                    <div class="border-t border-bone-light/20 pt-4 inline-block">
+                        <cite class="not-italic font-syne font-black text-lg text-wine-pale block">Montserrat R. (Estudiante Principiante)</cite>
+                        <span class="text-xs uppercase tracking-wider text-bone-light/60 mt-1 block">Sector Retail / Aprendizaje Individual</span>
                     </div>
                 </div>
 
                 <!-- Testimonial Item 2 -->
-                <div class="testimonial-slide opacity-0 hidden transition-all duration-500 space-y-8">
-                    <div class="flex justify-center text-mustard space-x-1">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <blockquote class="font-serif text-2xl md:text-3xl font-light italic leading-relaxed text-espresso/90 max-w-4xl mx-auto">
-                        "Necesitaba certificarme en el IELTS con una puntuación de 7.5 en tiempo récord para una maestría en el extranjero. Su dedicación, recursos impecables y tutoría directa me permitieron obtener un 8.0."
+                <div class="testimonial-slide opacity-0 hidden transition-all duration-500 space-y-6">
+                    <blockquote class="font-serif text-2xl md:text-4xl font-normal italic leading-relaxed text-bone-light max-w-4xl mx-auto">
+                        "Su enfoque en inglés turístico y hospitalidad fue justo lo que nuestro equipo de guías necesitaba. Domina temas de turismo y el servicio al cliente se nota en cada interacción."
                     </blockquote>
-                    <div>
-                        <cite class="not-italic font-semibold text-base text-espresso block">Dra. Natalia Ruiz</cite>
-                        <span class="text-xs uppercase tracking-wider text-espresso/60 mt-1 block">Médico Investigador & Alumna TOEFL/IELTS</span>
+                    <div class="border-t border-bone-light/20 pt-4 inline-block">
+                        <cite class="not-italic font-syne font-black text-lg text-wine-pale block">Carlos M. (Administrador de Hotel)</cite>
+                        <span class="text-xs uppercase tracking-wider text-bone-light/60 mt-1 block">Capacitación de Personal Turístico</span>
                     </div>
                 </div>
 
                 <!-- Testimonial Item 3 -->
-                <div class="testimonial-slide opacity-0 hidden transition-all duration-500 space-y-8">
-                    <div class="flex justify-center text-mustard space-x-1">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <blockquote class="font-serif text-2xl md:text-3xl font-light italic leading-relaxed text-espresso/90 max-w-4xl mx-auto">
-                        "Su trato cálido pero riguroso me devolvió la motivación por aprender. El material que prepara Sheyla para cada sesión es una obra de arte, específico para mis hobbies y sector comercial."
+                <div class="testimonial-slide opacity-0 hidden transition-all duration-500 space-y-6">
+                    <blockquote class="font-serif text-2xl md:text-4xl font-normal italic leading-relaxed text-bone-light max-w-4xl mx-auto">
+                        "Como profesional, necesitaba perfeccionar mi oratoria de servicio al cliente en inglés. Su dedicación por apoyar a los demás hace que cada minuto valga la pena."
                     </blockquote>
-                    <div>
-                        <cite class="not-italic font-semibold text-base text-espresso block">Mtra. Sofía Altamirano</cite>
-                        <span class="text-xs uppercase tracking-wider text-espresso/60 mt-1 block">Directora Creativa en Studio Element</span>
+                    <div class="border-t border-bone-light/20 pt-4 inline-block">
+                        <cite class="not-italic font-syne font-black text-lg text-wine-pale block">Ing. Fernando J. (Soporte de Sistemas)</cite>
+                        <span class="text-xs uppercase tracking-wider text-bone-light/60 mt-1 block">Inglés Profesional / Atención Global</span>
                     </div>
                 </div>
 
@@ -495,77 +517,76 @@
 
             <!-- Testimonial Selector Navigation dots -->
             <div class="flex items-center justify-center space-x-3 mt-12">
-                <button onclick="switchTestimonial(0)" class="testimonial-dot w-3 h-3 rounded-full bg-espresso transition-all duration-300 border border-espresso" aria-label="Slide 1"></button>
-                <button onclick="switchTestimonial(1)" class="testimonial-dot w-3 h-3 rounded-full bg-transparent transition-all duration-300 border border-espresso/40" aria-label="Slide 2"></button>
-                <button onclick="switchTestimonial(2)" class="testimonial-dot w-3 h-3 rounded-full bg-transparent transition-all duration-300 border border-espresso/40" aria-label="Slide 3"></button>
+                <button onclick="switchTestimonial(0)" class="testimonial-dot w-4 h-4 bg-bone transition-all duration-300 border-2 border-bone" aria-label="Slide 1"></button>
+                <button onclick="switchTestimonial(1)" class="testimonial-dot w-4 h-4 bg-transparent transition-all duration-300 border-2 border-bone/40" aria-label="Slide 2"></button>
+                <button onclick="switchTestimonial(2)" class="testimonial-dot w-4 h-4 bg-transparent transition-all duration-300 border-2 border-bone/40" aria-label="Slide 3"></button>
             </div>
 
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contacto" class="py-24 lg:py-32 bg-bone border-t border-espresso/5">
+    <!-- CONTACT SECTION (INTEGRATED EMAIL AND FORMS) -->
+    <section id="contacto" class="py-24 bg-bone border-t-4 border-wine">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
                 
                 <!-- Contact Info Column -->
                 <div class="lg:col-span-5 space-y-8 flex flex-col justify-between">
                     <div class="space-y-6">
-                        <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase">
-                            <span class="w-8 h-[1px] bg-mustard"></span>
-                            <span>Contacto</span>
+                        <div class="inline-flex items-center space-x-3 bg-wine text-bone font-syne font-bold tracking-[0.25em] text-xs uppercase px-4 py-2 border-2 border-wine shadow-[3px_3px_0px_0px_rgba(128,24,41,1)]">
+                            <span>CONTACTO & RESERVA</span>
                         </div>
-                        <h2 class="font-serif text-4xl md:text-5xl font-light text-espresso">
-                            Hablemos sobre tus objetivos
+                        <h2 class="font-serif text-4xl md:text-5xl font-black text-wine">
+                            Comencemos a aprender hoy mismo
                         </h2>
-                        <p class="text-espresso/70 text-base font-light leading-relaxed">
-                            ¿Listo para llevar tu inglés profesional al siguiente nivel? Llena el formulario o agenda directamente por correo. Atiendo consultas personalizadas en toda América Latina y España en modalidad online.
+                        <p class="text-wine text-base font-semibold leading-relaxed">
+                            ¿Listo para incorporarte a un programa formativo dinámico? Escríbeme directamente o llena el formulario de postulación. Coordinamos sesiones individuales o de grupo vía Teams.
                         </p>
                     </div>
 
-                    <!-- Direct Contacts -->
-                    <div class="space-y-6 pt-6 border-t border-espresso/10">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 bg-mustard-light flex items-center justify-center text-mustard rounded-none">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
+                    <!-- Direct Contacts Cards (Maximalist) -->
+                    <div class="space-y-6 pt-6 border-t-4 border-wine">
+                        <div class="flex items-center space-x-4 border-2 border-wine p-4 bg-bone-light shadow-[4px_4px_0px_0px_rgba(90,13,26,1)]">
+                            <div class="w-12 h-12 bg-wine text-bone flex items-center justify-center font-bold">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
                             </div>
                             <div>
-                                <p class="text-xs uppercase tracking-wider text-espresso/60">Escríbeme por correo</p>
-                                <a href="mailto:sheyla.arcos@domain.com" class="text-base font-semibold hover:text-mustard transition-colors">sheyla.arcos@domain.com</a>
+                                <p class="text-[10px] uppercase tracking-wider font-extrabold text-wine/70">Correo Electrónico</p>
+                                <a href="mailto:arcoscruzsheyla@gmail.com" class="text-sm md:text-base font-syne font-black hover:underline">arcoscruzsheyla@gmail.com</a>
                             </div>
                         </div>
 
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 bg-mustard-light flex items-center justify-center text-mustard rounded-none">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        <div class="flex items-center space-x-4 border-2 border-wine p-4 bg-bone-light shadow-[4px_4px_0px_0px_rgba(90,13,26,1)]">
+                            <div class="w-12 h-12 bg-wine text-bone flex items-center justify-center font-bold">
+                                <i data-lucide="calendar" class="w-6 h-6"></i>
                             </div>
                             <div>
-                                <p class="text-xs uppercase tracking-wider text-espresso/60">Disponibilidad</p>
-                                <p class="text-base font-semibold">Sesiones Online (GMT-6 / GMT-5)</p>
+                                <p class="text-[10px] uppercase tracking-wider font-extrabold text-wine/70">Disponibilidad (Hora México)</p>
+                                <p class="text-sm md:text-base font-syne font-black">Sesiones vía Teams (08:00 AM - 03:00 PM)</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Small Brand signoff -->
-                    <p class="text-xs text-espresso/40 tracking-wider">
-                        Atención personalizada uno-a-uno previa confirmación de agenda.
+                    <p class="text-xs text-wine/60 font-semibold uppercase tracking-wider">
+                        Soporte continuo y clases con enfoque en el desarrollo humano.
                     </p>
                 </div>
 
                 <!-- Interactive Contact Form Column -->
-                <div class="lg:col-span-7 bg-bone-light border border-espresso/10 p-8 lg:p-12 shadow-sm relative">
+                <div class="lg:col-span-7 bg-bone-light border-4 border-wine p-8 lg:p-12 shadow-[8px_8px_0px_0px_rgba(90,13,26,1)] relative">
                     
                     <!-- Success Notification Overlay (Hidden by Default) -->
-                    <div id="success-notification" class="hidden absolute inset-0 bg-bone-light/95 backdrop-blur-sm z-20 flex flex-col items-center justify-center text-center p-8 transition-all duration-300">
-                        <div class="w-16 h-16 bg-mustard-light text-mustard flex items-center justify-center rounded-full mb-6">
-                            <i data-lucide="check" class="w-8 h-8"></i>
+                    <div id="success-notification" class="hidden absolute inset-0 bg-bone-light/98 backdrop-blur-sm z-20 flex flex-col items-center justify-center text-center p-8 transition-all duration-300">
+                        <div class="w-20 h-20 bg-wine text-bone flex items-center justify-center rounded-none border-4 border-wine shadow-[4px_4px_0px_0px_rgba(128,24,41,1)] mb-6">
+                            <i data-lucide="check" class="w-10 h-10"></i>
                         </div>
-                        <h3 class="font-serif text-3xl font-semibold text-espresso mb-3">¡Mensaje Enviado!</h3>
-                        <p class="text-espresso/70 text-sm max-w-sm font-light leading-relaxed mb-6">
-                            Gracias por ponerte en contacto, Sheyla. Recibirás una respuesta personalizada en tu correo electrónico en un lapso no mayor a 24 horas hábiles.
+                        <h3 class="font-syne text-3xl font-black text-wine mb-3">¡FORMULARIO ENVIADO!</h3>
+                        <p class="text-wine text-sm max-w-sm font-semibold leading-relaxed mb-6">
+                            He recibido tus datos correctamente. Me pondré en contacto contigo en tu correo electrónico para organizar nuestra sesión de introducción vía Teams. ¡Sigamos aprendiendo!
                         </p>
-                        <button onclick="resetContactForm()" class="px-6 py-2 border border-espresso text-espresso hover:bg-espresso hover:text-bone text-xs uppercase tracking-widest font-semibold transition-all">
-                            Enviar otro mensaje
+                        <button onclick="resetContactForm()" class="px-8 py-4 bg-wine text-bone border-4 border-wine font-syne font-black text-xs uppercase tracking-widest transition-all shadow-[4px_4px_0px_0px_rgba(128,24,41,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+                            Enviar otra solicitud
                         </button>
                     </div>
 
@@ -573,31 +594,39 @@
                     <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="space-y-2">
-                                <label for="name" class="text-xs uppercase tracking-widest text-espresso/70 font-semibold">Nombre Completo *</label>
-                                <input type="text" id="name" required class="w-full bg-bone border-b border-espresso/25 focus:border-mustard outline-none py-3 text-sm text-espresso transition-colors placeholder:text-espresso/35" placeholder="Ej. Roberto Gómez">
+                                <label for="name" class="text-xs uppercase tracking-widest text-wine font-extrabold font-syne">Tu Nombre Completo *</label>
+                                <input type="text" id="name" required class="w-full bg-bone border-4 border-wine focus:bg-bone-light outline-none p-3 text-sm text-wine font-semibold placeholder:text-wine/40" placeholder="Ej. Roberto Gómez">
                             </div>
                             <div class="space-y-2">
-                                <label for="email" class="text-xs uppercase tracking-widest text-espresso/70 font-semibold">Correo Electrónico *</label>
-                                <input type="email" id="email" required class="w-full bg-bone border-b border-espresso/25 focus:border-mustard outline-none py-3 text-sm text-espresso transition-colors placeholder:text-espresso/35" placeholder="Ej. roberto@dominio.com">
+                                <label for="email" class="text-xs uppercase tracking-widest text-wine font-extrabold font-syne">Tu Correo Electrónico *</label>
+                                <input type="email" id="email" required class="w-full bg-bone border-4 border-wine focus:bg-bone-light outline-none p-3 text-sm text-wine font-semibold placeholder:text-wine/40" placeholder="Ej. roberto@dominio.com">
                             </div>
                         </div>
 
                         <div class="space-y-2">
-                            <label for="interest" class="text-xs uppercase tracking-widest text-espresso/70 font-semibold">Programa de Interés</label>
-                            <select id="interest" class="w-full bg-bone border-b border-espresso/25 focus:border-mustard outline-none py-3 text-sm text-espresso transition-colors">
-                                <option value="corporate">Inglés de Negocios & Liderazgo</option>
-                                <option value="certification">Preparación de Certificaciones TOEFL/IELTS</option>
-                                <option value="mentoring">Mentoría Directa 1-to-1</option>
-                                <option value="other">Otro asunto académico</option>
+                            <label for="interest" class="text-xs uppercase tracking-widest text-wine font-extrabold font-syne">Programa de Interés *</label>
+                            <select id="interest" class="w-full bg-bone border-4 border-wine focus:bg-bone-light outline-none p-3 text-sm text-wine font-semibold">
+                                <option value="turistico">Inglés con especialidad turística</option>
+                                <option value="principiante">Inglés Principiante (Desde cero)</option>
+                                <option value="profesional">Inglés Profesional & Servicio al Cliente</option>
+                                <option value="moodle">Uso de Moodle para Aprendizaje Activo</option>
                             </select>
                         </div>
 
                         <div class="space-y-2">
-                            <label for="message" class="text-xs uppercase tracking-widest text-espresso/70 font-semibold">Cuéntame sobre tu nivel actual y objetivos *</label>
-                            <textarea id="message" required rows="4" class="w-full bg-bone border-b border-espresso/25 focus:border-mustard outline-none py-3 text-sm text-espresso transition-colors placeholder:text-espresso/35 resize-none" placeholder="¿Cuáles son tus mayores desafíos hoy en día hablando inglés?"></textarea>
+                            <label for="message" class="text-xs uppercase tracking-widest text-wine font-extrabold font-syne">Háblame de tu nivel actual y tus objetivos *</label>
+                            <textarea id="message" required rows="4" class="w-full bg-bone border-4 border-wine focus:bg-bone-light outline-none p-3 text-sm text-wine font-semibold placeholder:text-wine/40 resize-none" placeholder="Cuéntame sobre ti, tus horarios y qué te gustaría aprender..."></textarea>
                         </div>
 
-                        <button type="submit" class="w-full py-4 bg-espresso text-bone hover:bg-mustard hover:text-espresso transition-all duration-300 text-xs tracking-widest uppercase font-semibold text-center flex items-center justify-center gap-2">
+                        <!-- Checkbox simulation for privacy -->
+                        <div class="flex items-start space-x-3 pt-2">
+                            <input type="checkbox" id="agree" required class="w-5 h-5 accent-wine border-2 border-wine cursor-pointer mt-0.5">
+                            <label for="agree" class="text-xs text-wine font-semibold leading-relaxed cursor-pointer select-none">
+                                Comprendo que las clases se coordinan de 8:00 AM a 3:00 PM (Hora México) vía Teams.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full py-5 bg-wine text-bone hover:bg-bone-light hover:text-wine border-4 border-wine transition-all duration-300 text-xs tracking-widest uppercase font-syne font-black text-center flex items-center justify-center gap-2 shadow-[6px_6px_0px_0px_rgba(128,24,41,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
                             Enviar Solicitud de Sesión
                             <i data-lucide="send" class="w-4 h-4"></i>
                         </button>
@@ -608,53 +637,49 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-espresso text-bone-dark py-16 border-t border-bone/5">
+    <!-- FOOTER (BRUTALIST / MAXIMALIST BLACK VINO FOOTER) -->
+    <footer class="bg-wine-dark text-bone-light py-16 border-t-4 border-wine">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-bone/10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b-2 border-bone-light/20">
                 
                 <!-- Left Brand Column -->
                 <div class="md:col-span-5 space-y-4">
-                    <p class="font-serif text-2xl lg:text-3xl font-semibold tracking-wide text-bone">
-                        Sheyla Arcos Cruz
+                    <p class="font-syne text-3xl font-black tracking-tight text-bone">
+                        SHEYLA ARCOS CRUZ
                     </p>
-                    <p class="text-xs tracking-[0.25em] uppercase text-mustard font-semibold">
-                        English Educator & Consultant
+                    <p class="text-[10px] tracking-[0.25em] uppercase text-wine-pale font-extrabold">
+                        English Educator & Tourism Consultant
                     </p>
-                    <p class="text-bone/60 text-sm max-w-sm font-light mt-4 leading-relaxed">
-                        Redefiniendo el bilingüismo con metodologías activas y enfoque holístico personalizado. Educación premium para los líderes del futuro.
+                    <p class="text-bone-light/75 text-sm font-semibold mt-4 leading-relaxed">
+                        Comprometida con brindar soporte de alto nivel a mis alumnos. Impulsando el aprendizaje continuo de inglés para principiantes, profesionales y el sector turístico nacional e internacional.
                     </p>
                 </div>
 
                 <!-- Middle Links Column -->
                 <div class="md:col-span-3 space-y-4">
-                    <h5 class="text-xs uppercase tracking-widest font-semibold text-mustard">Explorar</h5>
-                    <ul class="space-y-3 text-sm text-bone/70">
-                        <li><a href="#sobre-mi" class="hover:text-mustard transition-colors">Sobre Mí</a></li>
-                        <li><a href="#servicios" class="hover:text-mustard transition-colors">Servicios Premium</a></li>
-                        <li><a href="#portafolio" class="hover:text-mustard transition-colors">Portafolio & Recursos</a></li>
-                        <li><a href="#testimonios" class="hover:text-mustard transition-colors">Testimonios de Alumnos</a></li>
+                    <h5 class="text-xs uppercase tracking-widest font-extrabold text-wine-pale font-syne">Navegación</h5>
+                    <ul class="space-y-3 text-sm font-semibold text-bone-light/80">
+                        <li><a href="#sobre-mi" class="hover:text-wine-pale hover:underline transition-all">Sobre Mí</a></li>
+                        <li><a href="#servicios" class="hover:text-wine-pale hover:underline transition-all">Programas de Inglés</a></li>
+                        <li><a href="#portafolio" class="hover:text-wine-pale hover:underline transition-all">Plataforma Moodle</a></li>
+                        <li><a href="#testimonios" class="hover:text-wine-pale hover:underline transition-all">Testimonios de Alumnos</a></li>
                     </ul>
                 </div>
 
                 <!-- Right Brand Details/Inspiration Column -->
                 <div class="md:col-span-4 space-y-4">
-                    <h5 class="text-xs uppercase tracking-widest font-semibold text-mustard">Inspiración Semanal</h5>
-                    <p class="text-bone/70 text-sm italic font-serif leading-relaxed">
-                        "To have another language is to possess a second soul."
+                    <h5 class="text-xs uppercase tracking-widest font-extrabold text-wine-pale font-syne">Filosofía Profesional</h5>
+                    <p class="text-bone-light/85 text-sm italic font-serif leading-relaxed">
+                        "El apoyo constante y las herramientas organizadas transforman el miedo en seguridad de comunicación."
                     </p>
-                    <p class="text-xs text-bone/50">— Charlemagne</p>
                     
                     <!-- Social Links -->
                     <div class="flex space-x-4 pt-4">
-                        <a href="#" class="w-8 h-8 rounded-full border border-bone/20 hover:border-mustard hover:text-mustard flex items-center justify-center transition-colors">
+                        <a href="#" class="w-10 h-10 border-2 border-bone-light hover:border-wine-pale hover:text-wine-pale flex items-center justify-center transition-colors">
                             <i data-lucide="linkedin" class="w-4 h-4"></i>
                         </a>
-                        <a href="#" class="w-8 h-8 rounded-full border border-bone/20 hover:border-mustard hover:text-mustard flex items-center justify-center transition-colors">
-                            <i data-lucide="instagram" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 rounded-full border border-bone/20 hover:border-mustard hover:text-mustard flex items-center justify-center transition-colors">
-                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        <a href="mailto:arcoscruzsheyla@gmail.com" class="w-10 h-10 border-2 border-bone-light hover:border-wine-pale hover:text-wine-pale flex items-center justify-center transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </div>
@@ -662,11 +687,11 @@
             </div>
 
             <!-- Bottom Copyright & Fineprint -->
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-bone/50">
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-bone-light/50 font-semibold font-mono">
                 <p>&copy; 2026 Sheyla Arcos Cruz. Todos los derechos reservados.</p>
                 <div class="flex space-x-6">
-                    <a href="#" class="hover:text-mustard transition-colors">Términos de Servicio</a>
-                    <a href="#" class="hover:text-mustard transition-colors">Políticas de Privacidad</a>
+                    <a href="#" class="hover:text-wine-pale">Términos de Servicio</a>
+                    <a href="#" class="hover:text-wine-pale">Políticas de Privacidad</a>
                 </div>
             </div>
         </div>
@@ -715,7 +740,6 @@
             slides.forEach((slide, i) => {
                 if (i === index) {
                     slide.classList.remove('hidden');
-                    // Add smooth transition trigger
                     setTimeout(() => {
                         slide.classList.remove('opacity-0');
                         slide.classList.add('opacity-100');
@@ -730,12 +754,12 @@
             // Update navigation dots style
             dots.forEach((dot, i) => {
                 if (i === index) {
-                    dot.classList.add('bg-espresso');
-                    dot.classList.remove('bg-transparent', 'border-espresso/40');
-                    dot.classList.add('border-espresso');
+                    dot.classList.add('bg-bone');
+                    dot.classList.remove('bg-transparent', 'border-bone/40');
+                    dot.classList.add('border-bone');
                 } else {
-                    dot.classList.remove('bg-espresso', 'border-espresso');
-                    dot.classList.add('bg-transparent', 'border-espresso/40');
+                    dot.classList.remove('bg-bone', 'border-bone');
+                    dot.classList.add('bg-transparent', 'border-bone/40');
                 }
             });
         }
@@ -746,27 +770,26 @@
             switchTestimonial(nextIndex);
         }, 8000);
 
-        // Reset timer when manually clicking a slide dot
-        dots.forEach(dot => {
+        dots.forEach((dot, idx) => {
             dot.addEventListener('click', () => {
                 clearInterval(testimonialInterval);
+                switchTestimonial(idx);
             });
         });
 
-        // 3. Contact Form Submission mock up
+        // 3. Contact Form Submission simulation
         const contactForm = document.getElementById('contact-form');
         const successNotification = document.getElementById('success-notification');
 
         function handleFormSubmit(event) {
             event.preventDefault();
             
-            // Collect Form Values if needed for backend validation simulation
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
             if(name && email && message) {
-                // Show clean modern in-card success state
+                // Show beautiful maximalist card notification success state
                 successNotification.classList.remove('hidden');
                 successNotification.classList.add('flex');
             }
@@ -780,29 +803,17 @@
             successNotification.classList.remove('flex');
         }
 
-        // 4. Subtle portfolio filter toggle styling
+        // 4. Portfolio Filter visual toggle
         const filterButtons = document.querySelectorAll('.portfolio-filter');
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 filterButtons.forEach(btn => {
-                    btn.classList.remove('text-mustard', 'border-b-2', 'border-mustard');
-                    btn.classList.add('text-espresso/60');
+                    btn.classList.remove('bg-wine', 'text-bone', 'shadow-[2px_2px_0px_0px_rgba(128,24,41,1)]');
+                    btn.classList.add('text-wine');
                 });
-                button.classList.add('text-mustard', 'border-b-2', 'border-mustard');
-                button.classList.remove('text-espresso/60');
+                button.classList.add('bg-wine', 'text-bone', 'shadow-[2px_2px_0px_0px_rgba(128,24,41,1)]');
+                button.classList.remove('text-wine');
             });
-        });
-
-        // 5. Header scroll visual depth effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-md', 'bg-bone/95');
-                header.classList.remove('bg-bone/90');
-            } else {
-                header.classList.remove('shadow-md', 'bg-bone/95');
-                header.classList.add('bg-bone/90');
-            }
         });
     </script>
 </body>
