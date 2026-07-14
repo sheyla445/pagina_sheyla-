@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheyla Arcos Cruz | English Educator & Consultant</title>
+    
+    <!-- Google Fonts: Cormorant Garamond (Serif) & Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN for minimalist UI icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bone: {
+                            DEFAULT: '#FAF7F2',
+                            light: '#FDFBF9',
+                            dark: '#F3ECE0',
+                        },
+                        espresso: {
+                            DEFAULT: '#2B1B12',
+                            light: '#4E3A2F',
+                            dark: '#1D120B',
+                        },
+                        mustard: {
+                            DEFAULT: '#D49A17',
+                            light: '#F6E6C5',
+                            dark: '#A6730F',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom scrollbar matching palette */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF7F2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2B1B12;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D49A17;
+        }
+    </style>
+</head>
+<body class="bg-bone text-espresso font-sans selection:bg-mustard-light selection:text-espresso antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full bg-bone/90 backdrop-blur-md z-50 border-b border-espresso/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex flex-col group">
+                <span class="font-serif text-2xl lg:text-3xl font-semibold tracking-wide text-espresso transition-colors group-hover:text-mustard">
+                    Sheyla Arcos Cruz
+                </span>
+                <span class="text-[10px] tracking-[0.25em] uppercase text-espresso/60 -mt-1 font-semibold">
+                    English Educator
+                </span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-wider uppercase text-espresso/80">
+                <a href="#sobre-mi" class="hover:text-mustard transition-colors duration-200">Sobre Mí</a>
+                <a href="#servicios" class="hover:text-mustard transition-colors duration-200">Servicios</a>
+                <a href="#portafolio" class="hover:text-mustard transition-colors duration-200">Portafolio</a>
+                <a href="#testimonios" class="hover:text-mustard transition-colors duration-200">Testimonios</a>
+                <a href="#contacto" class="hover:text-mustard transition-colors duration-200">Contacto</a>
+            </nav>
+
+            <!-- Call to Action Button (Desktop) -->
+            <div class="hidden md:block">
+                <a href="#contacto" class="px-6 py-3 border border-espresso text-espresso hover:bg-espresso hover:text-bone transition-all duration-300 text-xs tracking-widest uppercase font-semibold rounded-none">
+                    Agendar Sesión
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-toggle" class="md:hidden text-espresso focus:outline-none" aria-label="Toggle Menu">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden fixed top-20 left-0 w-full bg-bone border-b border-espresso/10 px-6 py-8 shadow-lg transition-all duration-300 ease-in-out">
+            <nav class="flex flex-col space-y-6 text-base font-semibold tracking-widest uppercase text-center">
+                <a href="#sobre-mi" class="mobile-link py-2 border-b border-espresso/5 hover:text-mustard">Sobre Mí</a>
+                <a href="#servicios" class="mobile-link py-2 border-b border-espresso/5 hover:text-mustard">Servicios</a>
+                <a href="#portafolio" class="mobile-link py-2 border-b border-espresso/5 hover:text-mustard">Portafolio</a>
+                <a href="#testimonios" class="mobile-link py-2 border-b border-espresso/5 hover:text-mustard">Testimonios</a>
+                <a href="#contacto" class="mobile-link py-2 pb-4 border-b border-espresso/5 hover:text-mustard">Contacto</a>
+                <a href="#contacto" class="mobile-link inline-block mx-auto bg-espresso text-bone px-8 py-3 text-sm tracking-widest uppercase hover:bg-mustard hover:text-espresso transition-all">
+                    Agendar Sesión
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center pt-24 lg:pt-32 overflow-hidden bg-bone-light">
+        <!-- Abstract Background Accent Elements -->
+        <div class="absolute right-0 top-1/4 w-[40%] h-[60%] bg-mustard/10 rounded-l-full filter blur-[120px] pointer-events-none"></div>
+        <div class="absolute left-10 bottom-10 w-[200px] h-[200px] border border-mustard/20 rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
+            <!-- Left Editorial Text Content -->
+            <div class="lg:col-span-7 flex flex-col justify-center space-y-8 z-10">
+                <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase">
+                    <span class="w-8 h-[1px] bg-mustard"></span>
+                    <span>Educación de Inglés Premium</span>
+                </div>
+                
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-espresso">
+                    Domina el inglés de forma <span class="italic text-mustard">natural</span> y con propósito profesional.
+                </h1>
+                
+                <p class="text-espresso/70 text-base md:text-lg max-w-xl font-light leading-relaxed">
+                    Transformo el aprendizaje del inglés en una experiencia orgánica y de alto nivel. Metodologías personalizadas diseñadas para líderes, profesionales y estudiantes decididos a conquistar un entorno global.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                    <a href="#contacto" class="px-8 py-4 bg-espresso text-bone hover:bg-mustard hover:text-espresso transition-all duration-300 text-sm tracking-widest uppercase font-semibold text-center group flex items-center justify-center gap-2 shadow-sm">
+                        Comenzar Ahora
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                    <a href="#servicios" class="px-8 py-4 border border-espresso/20 text-espresso hover:border-espresso transition-all duration-300 text-sm tracking-widest uppercase font-semibold text-center">
+                        Explorar Programas
+                    </a>
+                </div>
+
+                <!-- Small Key Metric / Trust Badges -->
+                <div class="grid grid-cols-3 gap-6 pt-10 border-t border-espresso/10">
+                    <div>
+                        <p class="font-serif text-3xl font-semibold text-espresso">10+</p>
+                        <p class="text-xs uppercase tracking-wider text-espresso/60 mt-1">Años de Experiencia</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-3xl font-semibold text-espresso">100%</p>
+                        <p class="text-xs uppercase tracking-wider text-espresso/60 mt-1">Metodología Activa</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-3xl font-semibold text-espresso">500+</p>
+                        <p class="text-xs uppercase tracking-wider text-espresso/60 mt-1">Alumnos Globales</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Visual Component (Minimalist Portrait & Decorative Box) -->
+            <div class="lg:col-span-5 relative flex justify-center lg:justify-end z-10 mt-8 lg:mt-0">
+                <div class="relative w-full max-w-[380px] aspect-[4/5] bg-bone-dark p-3 shadow-xl border border-espresso/5">
+                    <!-- Absolute Accent Box -->
+                    <div class="absolute -top-6 -left-6 w-12 h-12 border-t-2 border-l-2 border-mustard"></div>
+                    <div class="absolute -bottom-6 -right-6 w-12 h-12 border-b-2 border-r-2 border-mustard"></div>
+                    
+                    <!-- Main Portrait Image Placeholder with exact styling matching palette -->
+                    <div class="w-full h-full bg-espresso/5 overflow-hidden relative group">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" 
+                             alt="Sheyla Arcos Cruz" 
+                             onerror="this.src='https://placehold.co/600x800/2B1B12/FAF7F2?text=Sheyla+Arcos+Cruz'"
+                             class="w-full h-full object-cover grayscale contrast-[1.15] brightness-[0.95] hover:grayscale-0 transition-all duration-700 ease-in-out">
+                        
+                        <!-- Overlay accent tint -->
+                        <div class="absolute inset-0 bg-mustard/10 mix-blend-multiply opacity-40 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME (SOBRE MÍ) -->
+    <section id="sobre-mi" class="py-24 lg:py-32 bg-bone relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Left Details Graphic / Small Image -->
+                <div class="lg:col-span-5 order-2 lg:order-1 relative">
+                    <div class="relative w-full aspect-square max-w-[400px] mx-auto bg-mustard-light p-4">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600" 
+                             alt="Educación interactiva"
+                             onerror="this.src='https://placehold.co/600x600/FAF7F2/2B1B12?text=Education'"
+                             class="w-full h-full object-cover grayscale brightness-95">
+                        
+                        <!-- Mini Floater Card -->
+                        <div class="absolute -bottom-8 -left-8 bg-espresso text-bone p-6 shadow-2xl max-w-[200px]">
+                            <p class="font-serif text-3xl text-mustard italic font-light">"Bridge"</p>
+                            <p class="text-xs text-bone/70 uppercase tracking-widest mt-2 leading-relaxed">
+                                El idioma no es una barrera, es un puente hacia el mundo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Editorial Text -->
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-8">
+                    <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase">
+                        <span class="w-8 h-[1px] bg-mustard"></span>
+                        <span>Sobre Mí</span>
+                    </div>
+
+                    <h2 class="font-serif text-4xl md:text-5xl font-light leading-tight text-espresso">
+                        Soy Sheyla Arcos Cruz, facilitadora de tu crecimiento global a través del idioma.
+                    </h2>
+
+                    <div class="space-y-6 text-espresso/80 text-base font-light leading-relaxed">
+                        <p>
+                            A lo largo de mi trayectoria como educadora de inglés, he entendido que memorizar listas de vocabulario o reglas gramaticales abstractas no genera verdadera confianza. Mi enfoque se centra en el **diseño de experiencias de aprendizaje orgánico**, contextualizadas para la vida profesional real.
+                        </p>
+                        <p class="border-l-4 border-mustard pl-6 italic text-espresso/90 font-serif text-lg my-6">
+                            "Mi meta no es solo que apruebes un examen, sino que logres expresar tus ideas con la misma fuerza y matices con los que lo haces en tu idioma nativo."
+                        </p>
+                        <p>
+                            Especializada en consultorías corporativas, coaching de comunicación de negocios y preparación integral de perfiles de alta dirección para conferencias y negociaciones internacionales. Utilizo dinámicas activas con una curaduría meticulosa de recursos didácticos modernos.
+                        </p>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-bone-dark border border-espresso/10 text-espresso text-xs tracking-wider uppercase font-medium">Bilingüismo Efectivo</span>
+                        <span class="px-4 py-2 bg-bone-dark border border-espresso/10 text-espresso text-xs tracking-wider uppercase font-medium">Mentoring de Negocios</span>
+                        <span class="px-4 py-2 bg-bone-dark border border-espresso/10 text-espresso text-xs tracking-wider uppercase font-medium">Educación Personalizada</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION (3 CARDS) -->
+    <section id="servicios" class="py-24 lg:py-32 bg-bone-light relative border-t border-espresso/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 space-y-6 md:space-y-0">
+                <div class="space-y-4 max-w-2xl">
+                    <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase">
+                        <span class="w-8 h-[1px] bg-mustard"></span>
+                        <span>Programas de Aprendizaje</span>
+                    </div>
+                    <h2 class="font-serif text-4xl md:text-5xl font-light text-espresso">
+                        Consultoría y Programas de Idioma Exclusivos
+                    </h2>
+                </div>
+                <p class="text-espresso/60 text-sm max-w-xs uppercase tracking-widest leading-relaxed">
+                    Soluciones de aprendizaje a medida de tus objetivos profesionales.
+                </p>
+            </div>
+
+            <!-- The 3 Services Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Corporate & Business English -->
+                <div class="bg-bone border border-espresso/10 p-10 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-mustard group">
+                    <div class="space-y-8">
+                        <div class="w-14 h-14 bg-mustard-light flex items-center justify-center text-mustard transition-colors group-hover:bg-mustard group-hover:text-espresso">
+                            <i data-lucide="briefcase" class="w-6 h-6"></i>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="font-serif text-2xl font-semibold text-espresso">Inglés de Negocios & Liderazgo</h3>
+                            <p class="text-espresso/70 text-sm font-light leading-relaxed">
+                                Diseñado para ejecutivos y líderes que necesitan liderar juntas, realizar pitches de venta eficaces y redactar reportes corporativos de alto impacto.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 pt-6 border-t border-espresso/5 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-espresso/60 group-hover:text-mustard font-semibold transition-colors">Ver Detalles</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-espresso/40 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2: International Certification -->
+                <div class="bg-bone border border-espresso/10 p-10 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-mustard group">
+                    <div class="space-y-8">
+                        <div class="w-14 h-14 bg-mustard-light flex items-center justify-center text-mustard transition-colors group-hover:bg-mustard group-hover:text-espresso">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="font-serif text-2xl font-semibold text-espresso">Preparación TOEFL & IELTS</h3>
+                            <p class="text-espresso/70 text-sm font-light leading-relaxed">
+                                Estrategias avanzadas de examen, simulacros cronometrados y retroalimentación personalizada de oratoria para garantizar el puntaje requerido para posgrados y visados.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 pt-6 border-t border-espresso/5 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-espresso/60 group-hover:text-mustard font-semibold transition-colors">Ver Detalles</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-espresso/40 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3: 1-to-1 Premium Immersion -->
+                <div class="bg-bone border border-espresso/10 p-10 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-mustard group">
+                    <div class="space-y-8">
+                        <div class="w-14 h-14 bg-mustard-light flex items-center justify-center text-mustard transition-colors group-hover:bg-mustard group-hover:text-espresso">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="font-serif text-2xl font-semibold text-espresso">Mentoría 1-to-1 de Fluidez</h3>
+                            <p class="text-espresso/70 text-sm font-light leading-relaxed">
+                                Inmersión total uno a uno con enfoque conversacional. Corregimos acento, mejoramos comprensión y destrabamos el miedo escénico mediante role-plays personalizados.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 pt-6 border-t border-espresso/5 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-espresso/60 group-hover:text-mustard font-semibold transition-colors">Ver Detalles</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-espresso/40 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Focus Statement Below Cards -->
+            <div class="mt-16 bg-espresso text-bone p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="space-y-2">
+                    <h4 class="font-serif text-2xl lg:text-3xl font-light">¿Necesitas una currícula completamente personalizada para tu empresa?</h4>
+                    <p class="text-bone/75 text-sm font-light max-w-xl">Desarrollamos capacitaciones in-house alineadas a la jerga técnica de tu nicho comercial.</p>
+                </div>
+                <a href="#contacto" class="px-8 py-4 bg-mustard text-espresso hover:bg-bone hover:text-espresso transition-all duration-300 text-xs tracking-widest uppercase font-semibold whitespace-nowrap">
+                    Cotizar Proyecto
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portafolio" class="py-24 lg:py-32 bg-bone">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <!-- Section Header -->
+            <div class="space-y-4 mb-16">
+                <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase">
+                    <span class="w-8 h-[1px] bg-mustard"></span>
+                    <span>Portafolio e Impacto</span>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-light text-espresso">
+                    Casos de Éxito & Recursos Curados
+                </h2>
+                <p class="text-espresso/70 text-sm max-w-xl font-light leading-relaxed">
+                    Un vistazo a las guías de estudio interactivas, conferencias facilitadas y proyectos corporativos de éxito coordinados por Sheyla.
+                </p>
+            </div>
+
+            <!-- Portfolio Filters (Visual Only / Configured for UX) -->
+            <div class="flex flex-wrap gap-4 mb-10 border-b border-espresso/10 pb-6 text-xs uppercase tracking-wider font-semibold">
+                <button class="portfolio-filter text-mustard border-b-2 border-mustard pb-2 px-1">Todos</button>
+                <button class="portfolio-filter text-espresso/60 hover:text-espresso transition-colors pb-2 px-1">Guías de Estudio</button>
+                <button class="portfolio-filter text-espresso/60 hover:text-espresso transition-colors pb-2 px-1">Éxito Corporativo</button>
+                <button class="portfolio-filter text-espresso/60 hover:text-espresso transition-colors pb-2 px-1">Workshops</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden bg-espresso/5 aspect-[16/10] mb-4">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600" 
+                             alt="Business Toolkit"
+                             onerror="this.src='https://placehold.co/600x400/2B1B12/FAF7F2?text=Business+English+Toolkit'"
+                             class="w-full h-full object-cover grayscale brightness-95 group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-5 py-3 bg-bone text-espresso text-xs uppercase tracking-widest font-semibold">Ver Proyecto</span>
+                        </div>
+                    </div>
+                    <p class="text-xs uppercase tracking-widest text-mustard font-semibold mb-1">Guías de Estudio</p>
+                    <h4 class="font-serif text-xl font-semibold text-espresso group-hover:text-mustard transition-colors">Business English Interactive Toolkit</h4>
+                    <p class="text-espresso/70 text-xs mt-2 font-light line-clamp-2">Una biblioteca curada de plantillas y ejercicios de conversación utilizados por más de 120 ejecutivos para acelerar su oratoria en juntas virtuales.</p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden bg-espresso/5 aspect-[16/10] mb-4">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" 
+                             alt="Tech Team English Program"
+                             onerror="this.src='https://placehold.co/600x400/2B1B12/FAF7F2?text=Corporate+Consulting'"
+                             class="w-full h-full object-cover grayscale brightness-95 group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-5 py-3 bg-bone text-espresso text-xs uppercase tracking-widest font-semibold">Ver Proyecto</span>
+                        </div>
+                    </div>
+                    <p class="text-xs uppercase tracking-widest text-mustard font-semibold mb-1">Éxito Corporativo</p>
+                    <h4 class="font-serif text-xl font-semibold text-espresso group-hover:text-mustard transition-colors">Inmersión para Equipos de Tecnología</h4>
+                    <p class="text-espresso/70 text-xs mt-2 font-light line-clamp-2">Programa intensivo de 6 meses para elevar el nivel de comunicación de un equipo de software del nivel B1 al B2/C1, facilitando reuniones con clientes de EE.UU.</p>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden bg-espresso/5 aspect-[16/10] mb-4">
+                        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600" 
+                             alt="Public Speaking Class"
+                             onerror="this.src='https://placehold.co/600x400/2B1B12/FAF7F2?text=Public+Speaking'"
+                             class="w-full h-full object-cover grayscale brightness-95 group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-5 py-3 bg-bone text-espresso text-xs uppercase tracking-widest font-semibold">Ver Proyecto</span>
+                        </div>
+                    </div>
+                    <p class="text-xs uppercase tracking-widest text-mustard font-semibold mb-1">Workshops</p>
+                    <h4 class="font-serif text-xl font-semibold text-espresso group-hover:text-mustard transition-colors">Workshop de Oratoria "Speak without Fear"</h4>
+                    <p class="text-espresso/70 text-xs mt-2 font-light line-clamp-2">Taller dinámico intensivo para superar la ansiedad comunicativa y consolidar técnicas de persuasión, proyección de voz y lenguaje corporal en inglés.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonios" class="py-24 lg:py-32 bg-bone-dark relative">
+        <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+            
+            <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase mb-10">
+                <span class="w-8 h-[1px] bg-mustard"></span>
+                <span>Testimonios Reales</span>
+            </div>
+
+            <!-- Testimonial Slider Wrapper (Vanilla JS Controlled) -->
+            <div class="relative min-h-[300px] flex items-center justify-center">
+                
+                <!-- Testimonial Item 1 -->
+                <div class="testimonial-slide opacity-100 block transition-all duration-500 space-y-8">
+                    <div class="flex justify-center text-mustard space-x-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <blockquote class="font-serif text-2xl md:text-3xl font-light italic leading-relaxed text-espresso/90 max-w-4xl mx-auto">
+                        "La metodología de Sheyla cambió por completo mi forma de hablar. Pasé de sentirme aterrado en las videollamadas con inversores a liderar juntas enteras con absoluta fluidez. Sus sesiones corporativas son de otro nivel."
+                    </blockquote>
+                    <div>
+                        <cite class="not-italic font-semibold text-base text-espresso block">Ing. Alejandro Medina</cite>
+                        <span class="text-xs uppercase tracking-wider text-espresso/60 mt-1 block">VP de Tecnología en FinTech Solutions</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial Item 2 -->
+                <div class="testimonial-slide opacity-0 hidden transition-all duration-500 space-y-8">
+                    <div class="flex justify-center text-mustard space-x-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <blockquote class="font-serif text-2xl md:text-3xl font-light italic leading-relaxed text-espresso/90 max-w-4xl mx-auto">
+                        "Necesitaba certificarme en el IELTS con una puntuación de 7.5 en tiempo récord para una maestría en el extranjero. Su dedicación, recursos impecables y tutoría directa me permitieron obtener un 8.0."
+                    </blockquote>
+                    <div>
+                        <cite class="not-italic font-semibold text-base text-espresso block">Dra. Natalia Ruiz</cite>
+                        <span class="text-xs uppercase tracking-wider text-espresso/60 mt-1 block">Médico Investigador & Alumna TOEFL/IELTS</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial Item 3 -->
+                <div class="testimonial-slide opacity-0 hidden transition-all duration-500 space-y-8">
+                    <div class="flex justify-center text-mustard space-x-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <blockquote class="font-serif text-2xl md:text-3xl font-light italic leading-relaxed text-espresso/90 max-w-4xl mx-auto">
+                        "Su trato cálido pero riguroso me devolvió la motivación por aprender. El material que prepara Sheyla para cada sesión es una obra de arte, específico para mis hobbies y sector comercial."
+                    </blockquote>
+                    <div>
+                        <cite class="not-italic font-semibold text-base text-espresso block">Mtra. Sofía Altamirano</cite>
+                        <span class="text-xs uppercase tracking-wider text-espresso/60 mt-1 block">Directora Creativa en Studio Element</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Testimonial Selector Navigation dots -->
+            <div class="flex items-center justify-center space-x-3 mt-12">
+                <button onclick="switchTestimonial(0)" class="testimonial-dot w-3 h-3 rounded-full bg-espresso transition-all duration-300 border border-espresso" aria-label="Slide 1"></button>
+                <button onclick="switchTestimonial(1)" class="testimonial-dot w-3 h-3 rounded-full bg-transparent transition-all duration-300 border border-espresso/40" aria-label="Slide 2"></button>
+                <button onclick="switchTestimonial(2)" class="testimonial-dot w-3 h-3 rounded-full bg-transparent transition-all duration-300 border border-espresso/40" aria-label="Slide 3"></button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contacto" class="py-24 lg:py-32 bg-bone border-t border-espresso/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                
+                <!-- Contact Info Column -->
+                <div class="lg:col-span-5 space-y-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center space-x-3 text-mustard font-semibold tracking-[0.25em] text-xs uppercase">
+                            <span class="w-8 h-[1px] bg-mustard"></span>
+                            <span>Contacto</span>
+                        </div>
+                        <h2 class="font-serif text-4xl md:text-5xl font-light text-espresso">
+                            Hablemos sobre tus objetivos
+                        </h2>
+                        <p class="text-espresso/70 text-base font-light leading-relaxed">
+                            ¿Listo para llevar tu inglés profesional al siguiente nivel? Llena el formulario o agenda directamente por correo. Atiendo consultas personalizadas en toda América Latina y España en modalidad online.
+                        </p>
+                    </div>
+
+                    <!-- Direct Contacts -->
+                    <div class="space-y-6 pt-6 border-t border-espresso/10">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-mustard-light flex items-center justify-center text-mustard rounded-none">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-espresso/60">Escríbeme por correo</p>
+                                <a href="mailto:sheyla.arcos@domain.com" class="text-base font-semibold hover:text-mustard transition-colors">sheyla.arcos@domain.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-mustard-light flex items-center justify-center text-mustard rounded-none">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-espresso/60">Disponibilidad</p>
+                                <p class="text-base font-semibold">Sesiones Online (GMT-6 / GMT-5)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Small Brand signoff -->
+                    <p class="text-xs text-espresso/40 tracking-wider">
+                        Atención personalizada uno-a-uno previa confirmación de agenda.
+                    </p>
+                </div>
+
+                <!-- Interactive Contact Form Column -->
+                <div class="lg:col-span-7 bg-bone-light border border-espresso/10 p-8 lg:p-12 shadow-sm relative">
+                    
+                    <!-- Success Notification Overlay (Hidden by Default) -->
+                    <div id="success-notification" class="hidden absolute inset-0 bg-bone-light/95 backdrop-blur-sm z-20 flex flex-col items-center justify-center text-center p-8 transition-all duration-300">
+                        <div class="w-16 h-16 bg-mustard-light text-mustard flex items-center justify-center rounded-full mb-6">
+                            <i data-lucide="check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-serif text-3xl font-semibold text-espresso mb-3">¡Mensaje Enviado!</h3>
+                        <p class="text-espresso/70 text-sm max-w-sm font-light leading-relaxed mb-6">
+                            Gracias por ponerte en contacto, Sheyla. Recibirás una respuesta personalizada en tu correo electrónico en un lapso no mayor a 24 horas hábiles.
+                        </p>
+                        <button onclick="resetContactForm()" class="px-6 py-2 border border-espresso text-espresso hover:bg-espresso hover:text-bone text-xs uppercase tracking-widest font-semibold transition-all">
+                            Enviar otro mensaje
+                        </button>
+                    </div>
+
+                    <!-- Actual HTML Form -->
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label for="name" class="text-xs uppercase tracking-widest text-espresso/70 font-semibold">Nombre Completo *</label>
+                                <input type="text" id="name" required class="w-full bg-bone border-b border-espresso/25 focus:border-mustard outline-none py-3 text-sm text-espresso transition-colors placeholder:text-espresso/35" placeholder="Ej. Roberto Gómez">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="email" class="text-xs uppercase tracking-widest text-espresso/70 font-semibold">Correo Electrónico *</label>
+                                <input type="email" id="email" required class="w-full bg-bone border-b border-espresso/25 focus:border-mustard outline-none py-3 text-sm text-espresso transition-colors placeholder:text-espresso/35" placeholder="Ej. roberto@dominio.com">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="interest" class="text-xs uppercase tracking-widest text-espresso/70 font-semibold">Programa de Interés</label>
+                            <select id="interest" class="w-full bg-bone border-b border-espresso/25 focus:border-mustard outline-none py-3 text-sm text-espresso transition-colors">
+                                <option value="corporate">Inglés de Negocios & Liderazgo</option>
+                                <option value="certification">Preparación de Certificaciones TOEFL/IELTS</option>
+                                <option value="mentoring">Mentoría Directa 1-to-1</option>
+                                <option value="other">Otro asunto académico</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="message" class="text-xs uppercase tracking-widest text-espresso/70 font-semibold">Cuéntame sobre tu nivel actual y objetivos *</label>
+                            <textarea id="message" required rows="4" class="w-full bg-bone border-b border-espresso/25 focus:border-mustard outline-none py-3 text-sm text-espresso transition-colors placeholder:text-espresso/35 resize-none" placeholder="¿Cuáles son tus mayores desafíos hoy en día hablando inglés?"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-espresso text-bone hover:bg-mustard hover:text-espresso transition-all duration-300 text-xs tracking-widest uppercase font-semibold text-center flex items-center justify-center gap-2">
+                            Enviar Solicitud de Sesión
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-espresso text-bone-dark py-16 border-t border-bone/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-bone/10">
+                
+                <!-- Left Brand Column -->
+                <div class="md:col-span-5 space-y-4">
+                    <p class="font-serif text-2xl lg:text-3xl font-semibold tracking-wide text-bone">
+                        Sheyla Arcos Cruz
+                    </p>
+                    <p class="text-xs tracking-[0.25em] uppercase text-mustard font-semibold">
+                        English Educator & Consultant
+                    </p>
+                    <p class="text-bone/60 text-sm max-w-sm font-light mt-4 leading-relaxed">
+                        Redefiniendo el bilingüismo con metodologías activas y enfoque holístico personalizado. Educación premium para los líderes del futuro.
+                    </p>
+                </div>
+
+                <!-- Middle Links Column -->
+                <div class="md:col-span-3 space-y-4">
+                    <h5 class="text-xs uppercase tracking-widest font-semibold text-mustard">Explorar</h5>
+                    <ul class="space-y-3 text-sm text-bone/70">
+                        <li><a href="#sobre-mi" class="hover:text-mustard transition-colors">Sobre Mí</a></li>
+                        <li><a href="#servicios" class="hover:text-mustard transition-colors">Servicios Premium</a></li>
+                        <li><a href="#portafolio" class="hover:text-mustard transition-colors">Portafolio & Recursos</a></li>
+                        <li><a href="#testimonios" class="hover:text-mustard transition-colors">Testimonios de Alumnos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Right Brand Details/Inspiration Column -->
+                <div class="md:col-span-4 space-y-4">
+                    <h5 class="text-xs uppercase tracking-widest font-semibold text-mustard">Inspiración Semanal</h5>
+                    <p class="text-bone/70 text-sm italic font-serif leading-relaxed">
+                        "To have another language is to possess a second soul."
+                    </p>
+                    <p class="text-xs text-bone/50">— Charlemagne</p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-4 pt-4">
+                        <a href="#" class="w-8 h-8 rounded-full border border-bone/20 hover:border-mustard hover:text-mustard flex items-center justify-center transition-colors">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-bone/20 hover:border-mustard hover:text-mustard flex items-center justify-center transition-colors">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-bone/20 hover:border-mustard hover:text-mustard flex items-center justify-center transition-colors">
+                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Fineprint -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-bone/50">
+                <p>&copy; 2026 Sheyla Arcos Cruz. Todos los derechos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-mustard transition-colors">Términos de Servicio</a>
+                    <a href="#" class="hover:text-mustard transition-colors">Políticas de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION LOGIC (VANILLA JS) -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            
+            // Toggle icon menu / close
+            if (isOpen) {
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        // Close menu when clicking on any mobile nav links
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // 2. Testimonials Swapper Logic
+        let activeIndex = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.testimonial-dot');
+
+        function switchTestimonial(index) {
+            activeIndex = index;
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('hidden');
+                    // Add smooth transition trigger
+                    setTimeout(() => {
+                        slide.classList.remove('opacity-0');
+                        slide.classList.add('opacity-100');
+                    }, 50);
+                } else {
+                    slide.classList.add('opacity-0');
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('hidden');
+                }
+            });
+
+            // Update navigation dots style
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('bg-espresso');
+                    dot.classList.remove('bg-transparent', 'border-espresso/40');
+                    dot.classList.add('border-espresso');
+                } else {
+                    dot.classList.remove('bg-espresso', 'border-espresso');
+                    dot.classList.add('bg-transparent', 'border-espresso/40');
+                }
+            });
+        }
+
+        // Auto-scroll testimonials every 8 seconds
+        let testimonialInterval = setInterval(() => {
+            let nextIndex = (activeIndex + 1) % slides.length;
+            switchTestimonial(nextIndex);
+        }, 8000);
+
+        // Reset timer when manually clicking a slide dot
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                clearInterval(testimonialInterval);
+            });
+        });
+
+        // 3. Contact Form Submission mock up
+        const contactForm = document.getElementById('contact-form');
+        const successNotification = document.getElementById('success-notification');
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Collect Form Values if needed for backend validation simulation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if(name && email && message) {
+                // Show clean modern in-card success state
+                successNotification.classList.remove('hidden');
+                successNotification.classList.add('flex');
+            }
+        }
+
+        function resetContactForm() {
+            // Clear inputs
+            contactForm.reset();
+            // Hide notification panel
+            successNotification.classList.add('hidden');
+            successNotification.classList.remove('flex');
+        }
+
+        // 4. Subtle portfolio filter toggle styling
+        const filterButtons = document.querySelectorAll('.portfolio-filter');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('text-mustard', 'border-b-2', 'border-mustard');
+                    btn.classList.add('text-espresso/60');
+                });
+                button.classList.add('text-mustard', 'border-b-2', 'border-mustard');
+                button.classList.remove('text-espresso/60');
+            });
+        });
+
+        // 5. Header scroll visual depth effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'bg-bone/95');
+                header.classList.remove('bg-bone/90');
+            } else {
+                header.classList.remove('shadow-md', 'bg-bone/95');
+                header.classList.add('bg-bone/90');
+            }
+        });
+    </script>
+</body>
+</html>
